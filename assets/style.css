@@ -34,10 +34,6 @@
   color: light
 }
 
-header {
-  background-color: var(--background-color);
-  font-family: var(--Roboto);
-}
 
 h1.site-title {
   font-family: var(--gugi);
@@ -197,18 +193,23 @@ span.site-btn.btn-span {
 
 
 .showcase {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/alex-showcase.jpg");
-  height: 100%;
-  width: 100%;
+
   background-repeat: no-repeat;
-    background-attachment: fixed;
+  padding: 50px 0px !important;
     background-position: center;
     background-size: cover;
     box-sizing: content-box;
-  padding: 50px 0px;
   margin: 0;
     width: auto;
     height: 100%;
+}
+
+.slick-list {
+  padding: 0 !important;
+}
+
+.amakasi-padding {
+  padding: 0px 50px;
 }
 
 
@@ -217,6 +218,7 @@ span.site-btn.btn-span {
   display: flex;
   margin: 3rem 0rem;
 }
+
 
 .amakasi-title {
   margin: 0px 15px;
@@ -232,9 +234,12 @@ span.site-btn.btn-span {
   margin: 3rem 0rem;
 }
 
+
 .shop2-bottom-row {
   margin-top: 1.5rem;
 }
+
+
 
 a.btn.btn-primary-cart {
   display: inline-block;

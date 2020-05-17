@@ -11,87 +11,114 @@ include('includes/appheader.php');
             <?php include('functions/classes/cart.class.php'); ?>
 
 
-            <aside class="col-12">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <?php if (isset($result)) echo $result; ?>
-                    <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
-                    <div class="section-heading">
-                        <h3 class="section-title">Shopping Cart</h3>
-                    </div>
-                    <small>All items in same shop will be processed together in checkout page</small>
-                    <p class="text-muted">You currently have <?php if (isset($countIP)) echo $countIP; ?> item(s) in your cart</p>
-                    <div class="card">
+            <output>
+                <div class="row">
+                    <aside class="col-lg-12">
+                        <div class="container section-heading">
+                            <h1 class="section-title text-center">iTrolley <i class="fas fa-shopping-cart"></i></h1>
+                        </div>
+                        <div class="card mb-3">
 
-                        <div class="table-responsive">
+                            <div class="table-responsive">
 
-                            <table class="table table-borderless table-shopping-cart">
-                                <thead class="text-muted thead-dark text-center">
-                                    <tr class="small text-uppercase">
-                                        <th>Product Name</th>
-                                        <th>Shop Name</th>
-                                        <th>Unit Price</th>
-                                        <th>Total</th>
-                                        <th>Delete</th>
-                                        <th>Process Item</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <?php
-                                    while ($rs = $statementCheckCart->fetch()) {
-                                        $cart_id = $rs['cart_id'];
-                                        $shop_id = $rs['m_id'];
-                                        $product_id  = $rs['product_id'];
-                                        $quantity  = $rs['quantity'];
-                                        $unit_price  = $rs['unit_price'];
-                                        $total_price  = $rs['total_price'];
-                                        $product_image  = $rs['product_image'];
-                                        $shop_name  = $rs['shop_name'];
-                                        $product_name  = $rs['product_name'];
-                                    ?>
-                                        <tr>
-                                            <td><?php if (isset($product_name)) echo $product_name; ?></td>
-                                            <td><?php if (isset($shop_name)) echo $shop_name; ?></td>
-                                            <td>R<?php if (isset($unit_price)) echo $unit_price; ?></td>
-                                            <td>R<?php if (isset($total_price)) echo $total_price; ?></td>
-                                            <td><input type="checkbox" name="remove[]" value="<?php if (isset($product_id)) echo $product_id; ?>"></td>
-                                            <td><a href="delivery.php?p_id=<?php if (isset($product_id)) echo $product_id; ?>" class="btn btn-primary-checkout btn-block">Checkout</a></td>
+                                <table class="table table-borderless table-shopping-cart">
+                                    <thead class="text-muted">
+                                        <tr class="small text-uppercase">
+                                            <th scope="col">Product</th>
+                                            <th scope="col" width="120">Store</th>
+                                            <th scope="col" width="120">Price</th>
+                                            <th scope="col" class="text-right d-none d-md-block" width="200"> </th>
                                         </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <figure class="itemside align-items-center">
+                                                    <div class="aside"><img src="images/food.jpg" class="img-sm"></div>
+                                                    <figcaption class="info">
+                                                        <a href="#" class="title text-dark">Muncheezz Braai Pack</a>
+                                                        <p class="text-muted small">Braai Meet</p>
+                                                    </figcaption>
+                                                </figure>
+                                            </td>
+                                            <td>
+                                                <p class="m-0"><a href="shops.php">Muncheezz</a></p>
+                                                <p><a href="amakasi.php">Soweto</a></p>
+                                            </td>
+                                            <td>
+                                                <div class="price-wrap">
+                                                    <var class="price">R80.00</var>
+                                                    <small class="text-muted"> R40 each </small>
+                                                </div> <!-- price-wrap .// -->
+                                            </td>
+                                            <td class="text-right d-none d-md-block">
+                                                <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="far fa-heart product-heart"></i></a>
+                                                <a href="" class="btn btn-light"> Remove</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
 
-                        </div> <!-- table-responsive.// -->
+                            </div> <!-- table-responsive.// -->
+
+                            <div class="card-body border-top">
+                                <p class="icontext"><i class="icon text-success fa fa-truck"></i> Free Delivery within 1-2 weeks</p>
+                            </div> <!-- card-body.// -->
+
+                        </div> <!-- card.// -->
+
+                    </aside> <!-- col.// -->
+                    <aside class="col-lg-12">
+
+                        <div class="card">
+                            <div class="card-body">
+                                <dl class="dlist-align">
+                                    <dt>Total price:</dt>
+                                    <dd class="text-right">R80.00</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Discount:</dt>
+                                    <dd class="text-right text-danger">- R10.00</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                    <dt>Total:</dt>
+                                    <dd class="text-right text-dark b"><strong>R70.00</strong></dd>
+                                </dl>
+                                <hr>
+
+                                <div class="container mb-5">
+                                    <div class="row">
+                                        <div class="d-none d-lg-block col"></div>
+                                        <div class="d-none d-lg-block col"></div>
+                                        <div class="col">
+                                            <p class="checkout-text"><i class="fas fa-lock"></i> Sercure payment powered by</p>
+                                            <img src="images/payfast.png" class="img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="d-none d-lg-block col"></div>
+                                        <div class="d-none d-lg-block col"></div>
+
+                                        <div class="col">
+                                            <a href="shops.php" class="btn btn-primary-cont"><i class="fa fa-chevron-left"></i> Shops</a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="checkout.php" class="btn btn-primary-checkout"> Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
 
 
-                    </div> <!-- card.// -->
 
-                    <div class="box-footer">
+                            </div> <!-- card-body.// -->
+                        </div> <!-- card.// -->
 
-
-                        <!-- box-footer Begin -->
-                        <div class="pull-left btn-secondary-left my-3">
-                            <!-- pull-left Begin -->
-                            <a href="shops.php" class="btn btn-primary-cont btn-block">
-                                <!-- btn btn-default Begin -->
-                                <i class="fa fa-chevron-left"></i> Continue Shopping
-                            </a><!-- btn btn-default Finish -->
-                        </div><!-- pull-left Finish -->
-
-
-
-                        <div class="pull-right my-3">
-                            <!-- pull-right Begin -->
-                            <button type="submit" name="updateCart" class="btn btn-primary-cart btn-block">
-                                <!-- btn btn-default Begin -->
-                                <i class="fas fa-sync"></i> Update Cart
-                            </button><!-- btn btn-default Finish -->
-
-                        </div><!-- pull-right Finish -->
-
-                        <input type="hidden" name="token" value="<?php if (function_exists('_token'))  echo _token(); ?>">
-                    </div><!-- box-footer Finish -->
-                </form>
-            </aside>
+                    </aside> <!-- col.// -->
+                </div> <!-- row.// -->
+            </output>
 
 
 

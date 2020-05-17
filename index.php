@@ -13,7 +13,7 @@ include('includes/appheader.php');
             <main>
 
                 <div class="container section-heading">
-                    <h1 class="section-title text-center">Top Picks Of The Day</h1>
+                    <h3 class="section-title text-center">Top Picks Of The Day</h3>
                 </div>
 
 
@@ -128,26 +128,20 @@ include('includes/appheader.php');
 
 
                 <div class="container section-heading">
-                    <h1 class="section-title text-center">Amakasi</h1>
+                    <h3 class="section-title text-center">Amakasi</h3>
                 </div>
 
 
                 <section>
                     <!--First Slider-->
-                    <div class="container-fluid showcase">
+                    <div class="container-fluid p-0">
 
                         <div class="site-slider">
-                            <div class="slider-one">
+                            <div class="row slider-one">
 
-                                <div class="container-fluid">
-
-                                        <div class="row">
-                                            <div class="col">
-                                                <h3 class="amakasi-title">Vaal</h3>
-                                            </div>
-                                        </div>
-
-
+                                <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/alex-showcase.jpg'); ">
+                                    <div class="container amakasi-padding" >
+                                        <h3 class="section-title">Alex/Gomora</h3>
                                         <div class="row shop-images">
                                             <div class="col">
                                                 <img src="images/food.jpg" alt="shop1" class="img-fluid">
@@ -162,9 +156,9 @@ include('includes/appheader.php');
                                                 <img src="images/food.jpg" alt="shop1" class="img-fluid">
                                             </div>
                                         </div>
-                                    
+                                    </div>
 
-                                    
+                                    <div class="container amakasi-padding" >
                                         <div class="row shop2-images">
                                             <div class="col-6">
                                                 <img src="images/food.jpg" alt="shop1" class="img-fluid">
@@ -190,9 +184,9 @@ include('includes/appheader.php');
                                                 </div>
                                             </div>
                                         </div>
-                                    
+                                    </div>
 
-                                    
+                                    <div class="container">
                                         <div class="row showcase-button">
                                             <a href="shops.php" class="btn btn-primary-cart ">
                                                 <!-- btn btn-default Begin -->
@@ -200,155 +194,137 @@ include('includes/appheader.php');
                                             </a>
                                         </div>
 
-                                    
-
-
+                                    </div><!-- box-footer Finish -->
                                 </div>
 
-                                <div class="container-fluid">
-                                    
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3 class="amakasi-title">Soweto</h3>
+                                <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/soweto3.jpg'); ">
+                                    <div class="container amakasi-padding" >
+                                        <h3 class="section-title">Soweto</h3>
+                                        <div class="row shop-images">
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
                                         </div>
                                     </div>
 
-
-                                    <div class="row shop-images">
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                    </div>
-                                
-
-                                
-                                    <div class="row shop2-images">
-                                        <div class="col-6">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                                </div>
+                                    <div class="container amakasi-padding" >
+                                        <div class="row shop2-images">
+                                            <div class="col-6">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
                                             </div>
 
-                                            <div class="row shop2-bottom-row">
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
+
+                                                <div class="row shop2-bottom-row">
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                
 
-                                
-                                    <div class="row showcase-button">
-                                        <a href="shops.php" class="btn btn-primary-cart ">
-                                            <!-- btn btn-default Begin -->
-                                            View all stores <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
+                                    <div class="container">
+                                        <div class="row showcase-button">
+                                            <a href="shops.php" class="btn btn-primary-cart ">
+                                                <!-- btn btn-default Begin -->
+                                                View all stores <i class="fa fa-chevron-right"></i>
+                                            </a>
+                                        </div>
 
-                                
+                                    </div><!-- box-footer Finish -->
+                                </div>
 
-
-                            </div>
-
-                            <div class="container-fluid">
-                                    
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3 class="amakasi-title">Alex</h3>
+                                <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/vaal3.jpg'); ">
+                                    <div class="container amakasi-padding" >
+                                        <h3 class="section-title">Vaal</h3>
+                                        <div class="row shop-images">
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
+                                            <div class="col">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            </div>
                                         </div>
                                     </div>
 
-
-                                    <div class="row shop-images">
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                        <div class="col">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-                                    </div>
-                                
-
-                                
-                                    <div class="row shop2-images">
-                                        <div class="col-6">
-                                            <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                                </div>
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                                </div>
+                                    <div class="container amakasi-padding" >
+                                        <div class="row shop2-images">
+                                            <div class="col-6">
+                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
                                             </div>
 
-                                            <div class="row shop2-bottom-row">
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
                                                 </div>
-                                                <div class="col">
-                                                    <img src="images/food.jpg" alt="shop1" class="img-fluid">
+
+                                                <div class="row shop2-bottom-row">
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
+                                                    <div class="col">
+                                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                
 
-                                
-                                    <div class="row showcase-button">
-                                        <a href="shops.php" class="btn btn-primary-cart ">
-                                            <!-- btn btn-default Begin -->
-                                            View all stores <i class="fa fa-chevron-right"></i>
-                                        </a>
-                                    </div>
+                                    <div class="container">
+                                        <div class="row showcase-button">
+                                            <a href="shops.php" class="btn btn-primary-cart ">
+                                                <!-- btn btn-default Begin -->
+                                                View all stores <i class="fa fa-chevron-right"></i>
+                                            </a>
+                                        </div>
 
-                                
-
+                                    </div><!-- box-footer Finish -->
+                                </div>
 
                             </div>
 
 
-
-
-                            </div>
 
                             <div class="slider-btn">
-                                <span class="prev position-top"><i class="fas fa-chevron-left"></i></span>
-                                <span class="next position-top right-0"><i class="fas fa-chevron-right"></i></span>
+                                <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
+                                <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
                             </div>
                         </div>
+                        <!--End First Slider-->
+
                     </div>
-                    <!--End First Slider-->
                 </section>
 
 
@@ -356,7 +332,7 @@ include('includes/appheader.php');
 
 
                 <div class="container section-heading">
-                    <h1 class="section-title text-center">Categories</h1>
+                    <h3 class="section-title text-center">Categories</h3>
                 </div>
 
                 <section>

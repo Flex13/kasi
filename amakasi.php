@@ -11,9 +11,9 @@ include('functions/classes/locations.class.php');
         <div class="container" style="margin-bottom: 100px;">
             <?php include('includes/includes_main.php'); ?>
 
-            <header class="section-heading">
-                <h3 class="section-title text-center">Amakasi</h3>
-            </header><!-- sect-heading -->
+            <div class="container section-heading">
+                            <h1 class="section-title text-center">Amakasi <i class="fas fa-map-pin"></i></h1>
+                        </div>
             <?php if (isset($result)) echo $result; ?>
             <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
             <?php echo errorMessage(); ?><?php echo successMessage(); ?>

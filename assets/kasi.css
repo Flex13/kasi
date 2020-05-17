@@ -331,6 +331,8 @@ a.btn.btn-primary-cont {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 100%;
+    margin: 0px 1rem;
     background-color: #6A1B9A;
     border: none;
     border-radius: .25rem;
@@ -353,6 +355,7 @@ a.btn.btn-primary-checkout {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    width: 100%;
     background-color: #00C851;
     border: none;
     border-radius: .25rem;
@@ -489,4 +492,17 @@ a.shop-button {
 
 .cat-banner {
     padding: 20px !important;
+}
+
+
+/* Checkout */
+
+.checkout-text {
+    font-size: 15px;
+    font-weight: 500;
+    float: right;
+}
+
+svg.fa-lock {
+    color: #DE1D27;
 }
