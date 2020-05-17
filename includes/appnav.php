@@ -47,7 +47,7 @@ $countIP = $row[0];
 
 
 <section>
-    <nav class="container fixed-bottom header-nav logo-padding">
+    <nav class="container-fluid fixed-bottom header-nav logo-padding">
         <ul class="nav nav-pills nav-justified">
             <li class="nav-item">
                 <a class="nav-link menu-icon <?php if ($page_title == 'Kasi Mall Online') {

@@ -1,0 +1,85 @@
+            <div class="row">
+                        <div class="col-12">
+                            <div class="card login-card">
+                                <div class="card-body">
+                                    <div class="card-banner">
+                                        <div class="card-body" style="height:250px; background-image: url('images/food.jpg');">
+                                        </div>
+                                        <div class="text-bottom cat-banner">
+                                            <a style="color: white;" href="">
+                                                <h4 class="title mb-0"> Food</h4>
+                                            </a>
+                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card login-card">
+                                <div class="card-body">
+                                    <div class="card-banner">
+                                        <div class="card-body" style="height:250px; background-image: url('images/spinza2.jpg');">
+                                        </div>
+                                        <div class="text-bottom cat-banner">
+                                            <a style="color: white;" href="">
+                                                <h4 class="title mb-0">Drinks</h4>
+                                            </a>
+                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card login-card">
+                                <div class="card-body">
+                                    <div class="card-banner">
+                                        <div class="card-body" style="height:250px; background-image: url('images/fashion.jpg');">
+                                        </div>
+                                        <div class="text-bottom cat-banner">
+                                            <a style="color: white;" href="">
+                                                <h4 class="title mb-0">Clothing</h4>
+                                            </a>
+                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div style="width: 100%; background-color: white; padding: 10px 0px 10px 0px; text-align: center; box-sizing: border-box;">
+                    <a style="display: flex; justify-content: center; flex-wrap: wrap; width:100%; text-decoration:none; text-align:center;" href="https://sacoronavirus.co.za/">
+                        <div class="main-corona-banner" style="display: inline-block; background-color: white; flex-grow: 2;">
+                            <img style="width: 294px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/main.png" alt="South African Government COVID-19 Portal" />
+                        </div>
+                        <div style="display: flex; flex-grow: 4; justify-content: center; flex-wrap: wrap;">
+                            <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
+                                <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+                                    <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/tested.png" alt="South Africa COVID-19 Tested Numbers" />
+                                </div>
+                                <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+                                    <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/positive.png" alt="South Africa COVID-19 Positive Cases" />
+                                </div>
+                            </div>
+                            <div style="display: flex; flex-grow: 1; justify-content: space-around; flex-wrap: wrap;">
+                                <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+                                    <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/cured.png" alt="South Africa COVID-19 Recovered Numbers" />
+                                </div>
+                                <div class="corona-icon" style="display: inline-block; flex-grow: 0; background-color: white;">
+                                    <img style="width: 179px !important;" src="https://embracecloud.s3.eu-west-2.amazonaws.com/deaths.png" alt="South Africa COVID-19 Death Numbers" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div style="text-align: center; background-color: white;">
+                        <a style="font-family: arial; text-decoration: none; font-size: 11px; color: #878787;" href="https://embrace.co.za/sacoronavirus-link">Linking to sacoronavirus.co.za is now required. Find out more and get the banner.</a>
+                    </div>
+                </div>
