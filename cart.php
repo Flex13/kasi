@@ -88,7 +88,7 @@ include('includes/appheader.php');
                                     <div class="row">
                                         <div class="d-none d-lg-block col"></div>
                                         <div class="d-none d-lg-block col"></div>
-                                        <div class="col">
+                                        <div class="col p-0">
                                             <p class="checkout-text"><i class="fas fa-lock"></i> Sercure payment powered by</p>
                                             <img src="images/payfast.png" class="img-fluid">
                                         </div>
@@ -103,7 +103,7 @@ include('includes/appheader.php');
                                         <div class="col">
                                             <a href="shops.php" class="btn btn-primary-cont"><i class="fa fa-chevron-left"></i> Shops</a>
                                         </div>
-                                        <div class="col">
+                                        <div class="col pr-0">
                                             <a href="checkout.php" class="btn btn-primary-checkout"> Checkout</a>
                                         </div>
                                     </div>

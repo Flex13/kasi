@@ -188,10 +188,7 @@ include('includes/appheader.php');
 
 
 
-                            <div class="slider-btn">
-                                <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
-                                <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
-                            </div>
+
                         </div>
 
                         <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/soweto3.jpg'); ">
@@ -251,10 +248,7 @@ include('includes/appheader.php');
 
 
 
-                            <div class="slider-btn">
-                                <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
-                                <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
-                            </div>
+                            
                         </div>
 
                         <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/vaal3.jpg'); ">
@@ -314,12 +308,13 @@ include('includes/appheader.php');
 
 
 
-                            <div class="slider-btn">
-                                <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
-                                <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
-                            </div>
+                            
                         </div>
 
+                    </div>
+                    <div class="slider-btn">
+                        <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
+                        <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
                     </div>
                 </div>
 

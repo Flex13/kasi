@@ -1,10 +1,11 @@
 <?php
 include("functions/main.php");
-$page_title = 'Login - Kasi Mall Online';
+$page_title = 'Register - Kasi Mall Online';
 include('includes/appheader.php');
-include('functions/classes/loginapp.class.php');
+include('functions/classes/registerApp.class.php');
 ?>
-<?php 
+
+<?php
 
 $ip_address = getRealIpUser();
 
@@ -16,46 +17,56 @@ $countIP = $row[0];
 
 ?>
 
-<section class="container login-section" style="margin-bottom: 100px;">
+<section class="container login-section">
+  <?php include('includes/includes_main.php'); ?>
 
-  <div class="container" align="center">
-    <div class="col-12 logo-padding">
-      <a href="index.php" class="brand-wrap"><img class="logo-login" src="images/kasilogo.jpg"></a>
-    </div>
-  </div>
-
-  <div class="card login-card">
-    <?php if (isset($result)) echo $result; ?>
-    <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
-    <?php echo errorMessage(); ?><?php echo successMessage(); ?>
+  <div class="card login-card mx-auto" style="max-width: 380px;">
     <div class="card-body">
-      <h4 class="card-title text-center">Sign in</h4>
+      <div class="container section-heading">
+        <h4 class="section-title text-center">Sign in</h4>
+      </div>
+      <?php if (isset($result)) echo $result; ?>
+      <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
+      <?php echo errorMessage(); ?><?php echo successMessage(); ?>
+      <form>
 
-      <form class="" action="" method="post">
         <div class="form-group">
-          <label>Email</label>
-          <input name="Email" class="form-control" placeholder="name@gmail.com" type="email">
+        <input name="Email" class="form-control" placeholder="Email" type="email">
         </div> <!-- form-group// -->
         <div class="form-group">
-          <a class="float-right login-links" href="forgot_pass.php">Forgot</a>
-          <label>Password</label>
-          <input name="Password" class="form-control" placeholder="******" type="password" type="password">
+        <input name="Password" class="form-control" placeholder="Password" type="password" type="password">
         </div> <!-- form-group// -->
+
         <div class="form-group">
-          <label class="custom-control custom-checkbox"> <input value="yes" name="remember" type="checkbox" class="custom-control-input">
+          <a href="forgot_pass.php" class="float-right login-links">Forgot password?</a>
+          <label class="float-left custom-control custom-checkbox"> <input value="yes" name="remember" type="checkbox"  class="custom-control-input" checked="">
             <div class="custom-control-label"> Remember </div>
           </label>
         </div> <!-- form-group form-check .// -->
-
-        <div class="form-group mt-3">
+        <div class="form-group">
           <input type="submit" name="login" class="btn btn-primary-login btn-block" value="Login">
         </div> <!-- form-group// -->
+
+        <div class="form-group">
+          <p class="text-center mt-4  ">Don't have account? <a href="register.php" class=" login-links">Sign up</a></p>
+        </div> <!-- form-group// -->
+
+
+
+
+
+
       </form>
     </div> <!-- card-body.// -->
-
-    <p class="text-center mt-4  ">Don't have account? <a href="register.php" class=" login-links">Sign up</a></p>
   </div>
+
+
+
 </section>
+
+
+
+
 
 
 
