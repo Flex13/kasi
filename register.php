@@ -3,6 +3,17 @@ include("functions/main.php");
 $page_title = 'Register - Kasi Mall Online'; 
 include('includes/appheader.php'); 
 include('functions/classes/registerApp.class.php');
+?>
+
+<?php 
+
+$ip_address = getRealIpUser();
+
+$stmtIP = $db->prepare('SELECT COUNT(*) FROM cart WHERE ip_address = :ip_address');
+$stmtIP->execute(array(':ip_address' => $ip_address));
+
+$row = $stmtIP->fetch();
+$countIP = $row[0];
 
 ?>
 <section class="container login-section" style="margin-bottom: 100px;">
@@ -86,9 +97,6 @@ include('functions/classes/registerApp.class.php');
             </li>
             <li class="nav-item">
                 <a class="nav-link menu-icon" href="#"><i class=" fas fa-search nav-icons"></i><br> Search</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-icon" href="cab/cab_index.php"><i class=" fas fa-car nav-icons"></i><br>iDelivery</a>
             </li>
         </ul>
     </nav>

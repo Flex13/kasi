@@ -14,8 +14,6 @@ $('')
 $('.slider-two')
   .not(".slick-intialized")
   .slick({
-    centerMode: true,
-    centerPadding: '60px',
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -94,12 +92,13 @@ $('.slider-three')
     nextArrow: ".site-slider-three .slider-btn .next",
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 800,
+        
         settings: {
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 2
         }
       },
       {
