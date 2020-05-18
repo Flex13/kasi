@@ -1,11 +1,11 @@
-<?php 
+<?php
 include("functions/main.php");
-$page_title = 'Register - Kasi Mall Online'; 
-include('includes/appheader.php'); 
+$page_title = 'Register - Kasi Mall Online';
+include('includes/appheader.php');
 include('functions/classes/registerApp.class.php');
 ?>
 
-<?php 
+<?php
 
 $ip_address = getRealIpUser();
 
@@ -72,34 +72,5 @@ $countIP = $row[0];
     </div>
     <section>
 
-    <section>
-    <nav class="container fixed-bottom header-nav logo-padding">
-        <ul class="nav nav-pills nav-justified">
-            <li class="nav-item">
-                <a class="nav-link menu-icon <?php if ($page_title == 'Kasi Mall Online') {
-                                                    echo "active";
-                                                } ?> " href="index.php"><i class=" fas fa-home nav-icons"></i><br> Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-icon <?php if ($page_title == 'Amakasi - Kasi Mall Online') {
-                                                    echo "active";
-                                                } ?> " href="amakasi.php"><i class=" fas fa-map-pin nav-icons"></i><br>Amakasi</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-icon <?php if ($page_title == 'diShopo - Kasi Mall Online') {
-                                                    echo "active";
-                                                } ?> " href="shops.php"><i class="fas fa-store-alt nav-icons"></i><br> diShopo </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-icon <?php if ($page_title == 'iTrolley - Kasi Mall Online') {
-                                                    echo "active";
-                                                } ?> " href="cart.php"><i class="fas fa-shopping-cart nav-icons"></i><br> iTrolley (<?php if (isset($countIP)) echo $countIP; ?>)</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link menu-icon" href="#"><i class=" fas fa-search nav-icons"></i><br> Search</a>
-            </li>
-        </ul>
-    </nav>
-</section>
 
         <?php include('includes/appfooter.php'); ?>
