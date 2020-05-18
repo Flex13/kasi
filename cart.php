@@ -43,13 +43,11 @@ include('includes/appheader.php');
                                             </td>
                                             <td>
                                                 <p class="m-0"><a href="shops.php">Muncheezz</a></p>
-                                                <p><a href="amakasi.php">Soweto</a></p>
+                                                <small class="text-muted"><a href="amakasi.php">Soweto</a></small>
                                             </td>
                                             <td>
-                                                <div class="price-wrap">
-                                                    <var class="price">R80.00</var>
-                                                    <small class="text-muted"> R40 each </small>
-                                                </div> <!-- price-wrap .// -->
+                                                <p class="m-0">R80.00</p>
+                                                <small class="text-muted"> R40 each </small>
                                             </td>
                                             <td class="text-right d-none d-md-block">
                                                 <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="far fa-heart product-heart"></i></a>
