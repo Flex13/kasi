@@ -133,7 +133,7 @@ include('includes/appheader.php');
 
                         <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/alex-showcase.jpg'); ">
                             <div class="container amakasi-padding">
-                                <h3 class="section-title " style="color:white;">Alex/Gomora</h3>
+                                <h3 class="section-title ">Alex/Gomora</h3>
                                 <div class="row shop-images d-none d-md-flex">
                                     <div class="col ">
                                         <img src="images/food.jpg" alt="shop1" class="img-fluid">
@@ -193,7 +193,7 @@ include('includes/appheader.php');
 
                         <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/soweto3.jpg'); ">
                             <div class="container amakasi-padding">
-                                <h3 class="section-title " style="color:white;">Soweto</h3>
+                                <h3 class="section-title">Soweto</h3>
                                 <div class="row shop-images d-none d-md-flex">
                                     <div class="col ">
                                         <img src="images/food.jpg" alt="shop1" class="img-fluid">
@@ -253,7 +253,7 @@ include('includes/appheader.php');
 
                         <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/vaal3.jpg'); ">
                             <div class="container amakasi-padding">
-                                <h3 class="section-title " style="color:white;">Vaal</h3>
+                                <h3 class="section-title">Vaal</h3>
                                 <div class="row shop-images d-none d-md-flex">
                                     <div class="col ">
                                         <img src="images/food.jpg" alt="shop1" class="img-fluid">

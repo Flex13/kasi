@@ -72,8 +72,10 @@ h1.site-title {
 
 .section-title {
   color: var(--primary-color) !important;
-  font-family: var(--gugi);
+  font-family: var(--gugi) !important;
 }
+
+
 
 /* Slider one */
 
@@ -89,14 +91,12 @@ h1.site-title {
 .site-slider .slider-btn .prev,
 .site-slider .slider-btn .next {
   margin: 0 1rem;
-  opacity: 0;
   transition: opacity 1s ease;
   color: var(--primary-color);
 }
 
 .site-slider:hover .slider-btn .prev,
 .site-slider:hover .slider-btn .next {
-  opacity: 1;
   color: var(--primary-color);
 }
 
