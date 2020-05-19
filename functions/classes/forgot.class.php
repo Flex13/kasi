@@ -1,10 +1,7 @@
 <?php
 
 //process the form if the reset password button is clicked
-if (isset($_POST['Reset-link'], $_POST['token'])) {
-
-    //validate token 
-    if (validate_token($_POST['token'])) {
+if (isset($_POST['Reset-link'])) {
         //process the form
         //initialize an array to store any error message from the form
         $form_errors = array();
@@ -101,8 +98,4 @@ if (isset($_POST['Reset-link'], $_POST['token'])) {
                
             }
         }
-    } else {
-        //Throw and error
-        $result = flashMessage("This request originates from an unknown source. Possible attack");
-    }
 }
