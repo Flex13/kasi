@@ -1,0 +1,15 @@
+<section class="header-buttons">
+    <div class="container">
+        <ul class="nav nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link btn-primary-menu" href="shops.php"><i class="fa fas fa-store-alt mr-2 header-icons"></i> <span class="text"> Shops</span> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-primary-menu mx-3" href="cart.php"><i class="fa fa-shopping-cart mr-2 header-icons"></i> <span class="text"> iTrolley</span> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-primary-menu" href="amakasi.php"><i class="fas fa-map-pin mr-2 header-icons"></i> <span class="text"> Amakasi</span></a>
+            </li>
+        </ul>
+    </div>
+</section>

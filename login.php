@@ -2,7 +2,7 @@
 include("functions/main.php");
 $page_title = 'Register - Kasi Mall Online';
 include('includes/appheader.php');
-include('functions/classes/registerApp.class.php');
+include('functions/classes/loginapp.class.php');
 ?>
 
 <?php
