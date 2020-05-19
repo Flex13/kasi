@@ -64,7 +64,7 @@ $countIP = $row[0];
                     </div> <!-- form-group end.// -->
                     <div class="form-group col-md-6">
                         <label>Province</label>
-                        <select id="inputState" class="form-control">
+                        <select id="inputProvince" class="form-control">
                             <option> Choose...</option>
                             <option value="Gauteng">Gauteng</option>
                             <option value="Free State">Free State</option>
@@ -91,16 +91,17 @@ $countIP = $row[0];
 
                 <div class="form-group">
                     <label class="custom-control custom-radio custom-control-inline">
-                        <input class="custom-control-input" checked="" type="radio" name="usertype" value="customer">
+                        <input class="custom-control-input" checked="" type="radio" name="User" value="customer">
                         <span class="custom-control-label">Customer</span>
                     </label>
                     <label class="custom-control custom-radio custom-control-inline">
-                        <input class="custom-control-input" type="radio" name="usertype" value="Supplier">
+                        <input class="custom-control-input" type="radio" name="User" value="Supplier">
                         <span class="custom-control-label">Supplier</span>
                     </label>
                 </div> <!-- form-group end.// -->
+
                 <div class="form-group">
-                    <label class="custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked="">
+                    <label class="custom-control custom-checkbox"> <input type="checkbox" value="1" name="Terms" class="custom-control-input" checked="">
                         <div class="custom-control-label"> I am agree with <a href="#" class=" login-links">terms and contitions</a> </div>
                     </label>
                 </div> <!-- form-group end.// -->
@@ -112,15 +113,13 @@ $countIP = $row[0];
                     <p class="text-center">Have an account? <a href="login.php" class=" login-links">Log In</a></p>
                 </div> <!-- form-group end.// -->
 
+
             </form>
         </article><!-- card-body.// -->
     </div>
 
 
 </section>
-
-
-
 
 
 

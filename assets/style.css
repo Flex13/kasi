@@ -273,3 +273,19 @@ a.btn.btn-primary-cart:hover {
   border-color: #FF8800 !important;
   background-color: #FF8800 !important;
 }
+
+body.reg-background {
+  font-weight: 400;
+  background-image:
+    url("../images/shops-reg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.login-card-reg {
+  border: none !important;
+    background: transparent;
+}
