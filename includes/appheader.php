@@ -32,9 +32,12 @@
     <link href="assets/ui.css" rel="stylesheet" type="text/css" />
     <link href="assets/responsive.css" rel="stylesheet" />
 
+
     <!--Slick-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 
 
 </head>
+
+<div class="loader"></div>

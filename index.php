@@ -4,8 +4,8 @@ $page_title = 'Kasi Mall Online';
 include('includes/appheader.php');
 ?>
 
-<body>
-    <section class="container-fluid section-content" style="margin-bottom: 100px;">
+<body  style="margin:0;">
+    <section class="container-fluid section-content"  style="margin-bottom: 100px">
         <div class="container-fluid p-0">
             <?php include('includes/includes_main.php'); ?>
 
@@ -25,7 +25,7 @@ include('includes/appheader.php');
                                 <div class="img-wrap">
                                     <img src="images/food.jpg" class="img-fluid" alt="product1">
                                     <span class="topbar">
-                                        <a href="#" class="float-right"><i class="far fa-heart product-heart"></i></a>
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                     </span>
                                     <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                                 </div>
@@ -44,7 +44,7 @@ include('includes/appheader.php');
                                 <div class="img-wrap">
                                     <img src="images/fashion.jpg" class="img-fluid" alt="product1">
                                     <span class="topbar">
-                                        <a href="#" class="float-right"><i class="far fa-heart product-heart"></i></a>
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                     </span>
                                     <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                                 </div>
@@ -62,7 +62,7 @@ include('includes/appheader.php');
                                 <div class="img-wrap">
                                     <img src="images/products1.jpeg" class="img-fluid" alt="product1">
                                     <span class="topbar">
-                                        <a href="#" class="float-right"><i class="far fa-heart product-heart"></i></a>
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                     </span>
                                     <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                                 </div>
@@ -80,7 +80,7 @@ include('includes/appheader.php');
                                 <div class="img-wrap">
                                     <img src="images/Spinza.jpg" class="img-fluid" alt="product1">
                                     <span class="topbar">
-                                        <a href="#" class="float-right"><i class="far fa-heart product-heart"></i></a>
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                     </span>
                                     <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                                 </div>
@@ -98,7 +98,7 @@ include('includes/appheader.php');
                                 <div class="img-wrap">
                                     <img src="images/spinza2.jpg" class="img-fluid" alt="product1">
                                     <span class="topbar">
-                                        <a href="#" class="float-right"><i class="far fa-heart product-heart"></i></a>
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                     </span>
                                     <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
                                 </div>

@@ -50,7 +50,7 @@ include('includes/appheader.php');
                                                 <small class="text-muted"> R40 each </small>
                                             </td>
                                             <td class="text-right d-none d-md-block">
-                                                <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="far fa-heart product-heart"></i></a>
+                                                <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
                                                 <a href="" class="btn btn-light"> Remove</a>
                                             </td>
                                         </tr>

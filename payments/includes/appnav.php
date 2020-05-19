@@ -23,7 +23,7 @@ $countIP = $row[0];
                 <ul class="nav justify-content-end nav-padding-top">
                     <?php if (!isset($_SESSION['c_email'])) : ?>
                         <li class="nav-item">
-                            <a class="nav-link top-nav" href="../register.php">Register</a>
+                            <a class="nav-link top-nav" href="../m_reg.php">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link top-nav" href="../login.php">Sign in</a>

@@ -36,7 +36,7 @@ $countIP = $row[0];
                 </div> <!-- form-group// -->
 
                 <div class="form-group">
-                    <p class="text-center">New here? <a href="register.php" class="login-links">Sign up</a></p>
+                    <p class="text-center">New here? <a href="m_reg.php" class="login-links">Sign up</a></p>
                 </div> <!-- form-group// -->
 
             </form>

@@ -378,6 +378,47 @@ a.btn.btn-primary-checkout:hover {
     color: whitesmoke;
 }
 
+input.next.btn.btn-primary-next {
+    display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    background-color: #00C851;
+    border: none;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+
+
+input.previous.btn.btn-primary-previous {
+    display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+    background-color: #6A1B9A;
+    border: none;
+    padding: .5rem 1.25rem;
+    border-radius: .25rem;
+    margin: 10px 0px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
 
 
 a.btn.btn-primary-logout {
