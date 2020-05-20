@@ -1,28 +1,22 @@
-<?php 
+<?php
 include("functions/main.php");
 $page_title = 'Activate - Kasi Mall Online'; ?>
-<?php include('includes/appheader.php'); 
+<?php include('includes/appheader.php');
 include('functions/classes/registerApp.class.php');
 
 ?>
-<section class="container login-section" style="margin-bottom: 100px;">
+<section class="container login-section" style="margin-bottom: 50px;">
+  <?php include('includes/includes_main.php'); ?>
 
-<div class="container" align="center">
-    <div class="col-12 logo-padding">
-                    <a href="index.php" class="brand-wrap"><img class="logo-login" src="images/kasilogo.jpg"></a>
-                </div>
-    </div>
-
-    <div class="card login-card">
- 
-      <div class="card-body">
-
+  <div class="card login-card mx-auto" style="max-width: 480px;">
+    <div class="card-body">
       <form class="" action="" method="post">
-      <?php if (isset($result)) echo $result; ?>
-      <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
-</form>
-      </div> <!-- card-body.// -->
+        <?php if (isset($result)) echo $result; ?>
+        <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
+      </form>
     </div>
+  </div>
+
 </section>
 
 

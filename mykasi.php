@@ -20,7 +20,6 @@ $page_title = 'My Kasi - Kasi Mall Online'; ?>
                     <a class="list-group-item mykasi-group-item" href="wishlist.php"><i class="fas fa-heart mr-2 header-icons"></i> Product Wishlist</a>
                     <a class="list-group-item mykasi-group-item" href="saved_locations.php"><i class="fas fa-map-pin  mr-2 header-icons"></i> Saved Locations</a>
                     <a class="list-group-item mykasi-group-item" href="my_orders.php"><i class="fa fa-list mr-2 header-icons"></i> My Orders</a>
-                    <a class="list-group-item mykasi-group-item" href="sell/m_index.php"><i class="fa fas fa-tag mr-2 header-icons"></i>Sell</a>
                     <a class="list-group-item mykasi-group-item" href="profile.php?edit=<?php if (isset($encode_id)) echo $encode_id; ?>"><i class="fa fa-user-edit mr-2 header-icons"></i> Edit Account Details</a>
                     <a class="list-group-item mykasi-group-item" href="change_pass.php?pass=<?php if (isset($encode_id)) echo $encode_id; ?>"><i class="fas fa-key mr-2 header-icons"></i> Change Password</a>
                     <a class="list-group-item mykasi-group-item" href="delete_acc.php?del=<?php if (isset($encode_id)) echo $encode_id; ?>"><i class="fa fa-trash mr-2 header-icons"></i> Delete Account</a>

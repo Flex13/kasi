@@ -7,13 +7,13 @@ if (isset($_POST['register'])) {
     $form_errors = array();
 
     //Form validation to be passed to function of check_empty_fields();
-    $required_fields = array('Name', 'Surname', 'Email', 'Password');
+    $required_fields = array('Name', 'Surname', 'Email', 'Password', 'Username', 'Gender', 'Cell', 'Province', 'Kasi', 'Address', 'Zip','City');
 
     //call the function to check empty field and merge the return data into form_error array
     $form_errors = array_merge($form_errors, check_empty_fields($required_fields));
 
     //Fields that requires checking for minimum length
-    $fields_to_check_length = array('Name' => 3, 'Surname' => 3, 'Password' => 6);
+    $fields_to_check_length = array('Name' => 3, 'Surname' => 3, 'Password' => 6, 'Username' => 3, 'Cell' => 10);
 
     //call the function to check minimum required length and merge the return data into form_error array
     $form_errors = array_merge($form_errors, check_min_length($fields_to_check_length));
@@ -30,6 +30,14 @@ if (isset($_POST['register'])) {
     $email              = $_POST['Email'];
     $password           = $_POST['Password'];
     $cpassword          = $_POST['Password2'];
+    $c_username         = $_POST['Username'];
+    $cell        = $_POST['Cell'];
+    $province         = $_POST['Province'];
+    $kasi         = $_POST['Kasi'];
+    $city         = $_POST['City'];
+    $street_address         = $_POST['Address'];
+    $zip         = $_POST['Zip'];
+    $gender         = $_POST['Gender'];
     $ip               = getRealIpUser();
     $date               = current_date();
 
@@ -48,8 +56,8 @@ if (isset($_POST['register'])) {
         try {
 
             // create sql to insert into database
-            $insert_customer = "INSERT INTO customers (c_email,c_password,c_reg_date,c_firstname,c_surname,ip_address)
-            VALUES (:email,:password,:date,:name,:surname,:ipAddress)";
+            $insert_customer = "INSERT INTO customers (c_username,c_email,c_password,c_reg_date,c_firstname,c_surname,c_contact,c_gender,c_province,c_city,c_kasi,c_street_address,c_zip,ip_address)
+            VALUES (:username,:email,:password,:date,:name,:surname,:contact,:gender,:province,:city,:kasi,:street_address,:zip,:ipAddress)";
 
             // use PDO to prepare and sanitize the data
             $statement = $db->prepare($insert_customer);
@@ -57,7 +65,7 @@ if (isset($_POST['register'])) {
 
 
             // Add the data into the database 
-            $statement->execute(array(':email' => $email, ':password' => $password_hash, ':date' => $date, ':name' => $name, ':surname' => $surname, ':ipAddress' => $ip));
+            $statement->execute(array(':username' => $c_username,':email' => $email, ':password' => $password_hash, ':date' => $date, ':name' => $name, ':surname' => $surname,':contact' => $cell,':gender' => $gender,':province' => $province,':city' => $city,':kasi' => $kasi,':street_address' => $street_address,':zip' => $zip, ':ipAddress' => $ip));
 
             //Check is one data was created in database the echo result
             if ($statement->rowcount() == 1) {
@@ -85,7 +93,7 @@ if (isset($_POST['register'])) {
                 </div>
 
                 <div style="padding: 20px;">
-                <p><a class="link__btn" style="padding: 14px; font-size: 18px; background-color:#848484; border-radius: 8px; display: block; color: #ffffff; text-align: center; text-decoration: none; cursor: pointer" href="https://bts-app.co.za/activate.php?id=' . $encode_id . '"> Confirm Email</a></p>
+                <p><a class="link__btn" style="padding: 14px; font-size: 18px; background-color:#848484; border-radius: 8px; display: block; color: #ffffff; text-align: center; text-decoration: none; cursor: pointer" href="http://127.0.0.1:8080/activate.php?id=' . $encode_id . '"> Confirm Email</a></p>
                 </div>
 
                 <div style="padding: 40px 0; font-size: 12px; color: #999999; border-top:1px solid #e2e2e2">
@@ -108,7 +116,7 @@ if (isset($_POST['register'])) {
                 if (!$mail->Send()) {
                     $result = flashMessage(" Email sending failed: " . $mail->ErrorInfo . " ");
                 } else {
-                    $result = flashMessage("Registration Successful. Email sent for activation", "Pass");
+                    $result = flashMessage("Registration Successful. Please check your email address to activate your account", "Pass");
                 }
             }
         } catch (PDOException $ex) {
@@ -134,8 +142,19 @@ if (isset($_POST['register'])) {
     $statement->execute(array(':activated' => "1", ':id' => $id));
 
     if ($statement->rowCount() == 1) {
-        $result = '<h4 class="card-title text-center">Email Confirmed </h4>
-    <p>Your email address has been verified, you can now Login with your email and password.</p>';
+        $result = '
+        
+        
+        
+        
+        
+        <h4 class="card-title text-center">Email Confirmed </h4>
+    <p>Your email address has been verified, you can now Login with your email and password.</p>'
+    
+    
+    
+    
+    ;
     } else {
         $result = '<p class="lead">No changes made please contact site admin,
         if you have not confirmed your email before.</p>';

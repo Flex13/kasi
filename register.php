@@ -43,7 +43,7 @@ $countIP = $row[0];
 
                     <div class="form-group">
                         <label for="email">Username</label>
-                        <input type="text" class="form-control" id="username" name="Username" placeholder="Username">
+                        <input type="text" class="form-control" id="username" value="<?php if (isset($c_username)) echo $c_username; ?>" name="Username" placeholder="Username">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -101,14 +101,18 @@ $countIP = $row[0];
 
                     <div class="form-group">
                         <label>Contact Details</label>
-                        <input type="tel" name="Cell" size="10" value="<?php if (isset($cell)) echo $cell; ?>" maxlength="12" class="form-control" oninput="this.className = ''">
+                        <input type="tel" name="Cell" size="10" value="<?php if (isset($cell)) echo $cell; ?>" maxlength="12" class="form-control" >
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
                         <label>Address</label>
-                        <input type="text" name="Address" size="32" value="<?php if (isset($address)) echo $address; ?>" maxlength="60" class="form-control" oninput="this.className = ''">
+                        <input type="text" name="Address" size="32" value="<?php if (isset($street_address)) echo $street_address; ?>" maxlength="60" class="form-control">
                     </div> <!-- form-group end.// -->
 
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="City" size="32" value="<?php if (isset($city)) echo $city; ?>" maxlength="60" class="form-control">
+                    </div> <!-- form-group end.// -->
 
 
                     <div class="form-group ">
@@ -141,7 +145,7 @@ $countIP = $row[0];
 
                         <div class="form-group col-md-6">
                             <label>Zip</label>
-                            <input type="text" name="Zip" size="10" value="<?php if (isset($zip)) echo $zip; ?>" maxlength="10" class="form-control" oninput="this.className = ''">
+                            <input type="text" name="Zip" size="10" value="<?php if (isset($zip)) echo $zip; ?>" maxlength="10" class="form-control">
                         </div>
                     </div> <!-- form-group end.// -->
 

@@ -33,7 +33,7 @@ $countIP = $row[0];
                             <a class="nav-link top-nav" href="logout.php">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link top-nav" href="mykasi.php">iAccount <i class=" ml-2 header-icons fas fa-user"></i></a>
+                            <a class="nav-link top-nav" href="mykasi.php"><?php if(isset($name)) echo $name; ?> <i class=" ml-2 header-icons fas fa-user"></i></a>
                         </li>
                     <?php endif ?>
                 </ul>
