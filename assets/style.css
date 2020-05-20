@@ -75,6 +75,16 @@ h1.site-title {
   font-family: var(--gugi) !important;
 }
 
+h2.reg-title {
+  color: white !important;
+  font-family: var(--gugi) !important;
+  font-size: 35pxl
+}
+
+.reg-title {
+  color: white !important;
+  font-family: var(--gugi) !important;
+}
 
 
 /* Slider one */
@@ -191,7 +201,7 @@ span.site-btn.btn-span {
 
 
 .showcase {
-
+  
   background-repeat: no-repeat;
   padding: 50px 0px !important;
   background-position: center;
@@ -285,7 +295,8 @@ body.reg-background {
   background-size: cover;
   height: 100vh;
 
-
+  background: rgb(106,27,154);
+background: linear-gradient(38deg, rgba(106,27,154,1) 22%, rgba(255,136,0,1) 56%, rgba(255,255,255,0.7147233893557423) 100%);
 }
 
 .login-card-reg {

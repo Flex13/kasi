@@ -4,13 +4,13 @@ $page_title = 'Kasi Mall Online';
 include('includes/appheader.php');
 ?>
 
-<body class="reg-background" style="background-image: url('../images/shops-reg.jpg');">
+<body class="reg-background">
     <section class="container-fluid">
 
         <div class="card login-card-reg mx-auto" style="max-width: 400px; padding-top: 130px;">
             <div class="card-body">
                 <div class="container section-heading">
-                    <h2 class="section-title text-center">Registration </h2>
+                    <h2 class="reg-title text-center">Registration </h2>
                 </div>
                 <div class="row mb-4">
                     <div class="col-12">
@@ -34,7 +34,7 @@ include('includes/appheader.php');
 
                 <div class="container section-heading">
                     <a href="index.php">
-                        <h6 class="section-title text-center">Back to home</h6>
+                        <h6 class="reg-title text-center">Back to home</h6>
                     </a>
                 </div>
 
