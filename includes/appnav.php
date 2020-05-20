@@ -26,14 +26,27 @@ $countIP = $row[0];
                             <a class="nav-link top-nav" href="m_reg.php">Register</a>
                         </li>
                         <li class="nav-item">
+                           <!-- <button class="nav-link top-nav" onclick="document.getElementById('id01').style.display='block'">Sign in</button>-->
                             <a class="nav-link top-nav" href="login.php">Sign in</a>
                         </li>
+
+                        
+
+
+
+
+
+
+
+
+
+
                     <?php else : ?>
                         <li class="nav-item">
                             <a class="nav-link top-nav" href="logout.php">Logout</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link top-nav" href="mykasi.php"><?php if(isset($name)) echo $name; ?> <i class=" ml-2 header-icons fas fa-user"></i></a>
+                            <a class="nav-link top-nav" href="mykasi.php"><?php if (isset($name)) echo $name; ?> <i class=" ml-2 header-icons fas fa-user"></i></a>
                         </li>
                     <?php endif ?>
                 </ul>

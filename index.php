@@ -8,6 +8,9 @@ include('includes/appheader.php');
     <section class="container-fluid section-content"  style="margin-bottom: 100px">
         <div class="container-fluid p-0">
             <?php include('includes/includes_main.php'); ?>
+            <?php include('includes/login_mode.php'); ?>
+
+            
 
             <!--Main-->
 
