@@ -7,13 +7,13 @@ require 'class.phpmailer.php';
                 $mail->isSMTP();
                 $mail->SMTPAuth = true;
                 $mail->Port = 465;
-                $mail->Host = 'mail.a-2-c.co.za';
+                $mail->Host = 'mail.kasimall.co.za';
                 $mail->IsHTML(true);
                 $mail->Mailer = 'smtp';
                 $mail->SMTPSecure = 'ssl';
                 
-                $mail->Username = '_mainaccount@a-2-c.co.za';
-                $mail->Password = 'upVq-(6~6PR~'; 
+                $mail->Username = 'info@kasimall.co.za';
+                $mail->Password = 'Avo8457%^&&'; 
                 
                 //Sender Info
                 $mail->From = "info@kasimall.co.za";

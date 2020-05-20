@@ -31,13 +31,18 @@ if (isset($_POST['login'])) {
 
 
             //check if user exist in the database
-            $sqlQuery = "SELECT * FROM customers WHERE c_email = :email";
-            $statement = $db->prepare($sqlQuery);
-            $statement->execute(array(':email' => $email));
+            $sqlQueryCustomer = "SELECT * FROM customers WHERE c_email = :email";
+            $statementCustomer = $db->prepare($sqlQueryCustomer);
+            $statementCustomer->execute(array(':email' => $email));
+
+            //check if user exist in the database
+            $sqlQuerySupplier = "SELECT * FROM merchant WHERE m_email = :email";
+            $statementSupplier = $db->prepare($sqlQuerySupplier);
+            $statementSupplier->execute(array(':email' => $email));
 
 
 
-            if ($row = $statement->fetch()) {
+            if ($row = $statementCustomer->fetch()) {
                 $id = $row['id'];
                 $hashed_password = $row['c_password'];
                 $email = $row['c_email'];
@@ -45,6 +50,7 @@ if (isset($_POST['login'])) {
                 $name = $row['c_firstname'];
                 $surname = $row['c_surname'];
                 $activated = $row['activated'];
+                $usertype = $row['user_type'];
 
                 if ($activated == "0") {
                     //Check User in trash
@@ -64,13 +70,13 @@ if (isset($_POST['login'])) {
                         $statement->execute(array(':id' => $id));
 
                         //Login User
-                        prepLogin($id,$email,$remember,$name,$surname);
+                        prepLogin($id,$email,$remember,$name,$surname,$usertype);
                     } else {
                         $result = flashMessage("Please activate your account to login. ");
                     }
                 } else {
                     if (password_verify($password, $hashed_password)) {
-                        prepLogin($id,$email,$remember,$name,$surname);
+                        prepLogin($id,$email,$remember,$name,$surname,$usertype);
                     } else {
                         $result = flashMessage("You have entered an invalid password");
                     }
@@ -78,6 +84,52 @@ if (isset($_POST['login'])) {
             } else {
                 $result = flashMessage("You have entered and invalid email");
             }
+
+            if ($row = $statementSupplier->fetch()) {
+                $id = $row['m_id'];
+                $hashed_password = $row['m_password'];
+                $email = $row['m_email'];
+                $activated = $row['activated'];
+                $usertype = $row['user_type'];
+
+                if ($activated == "0") {
+                    //Check User in trash
+                    $sqlQueryUser = "SELECT * FROM trash WHERE m_id = :id";
+                    $statement = $db->prepare($sqlQueryUser);
+                    $statement->execute(array(':id' => $id));
+
+                    if ($row = $statement->fetch()) {
+                        //Activate Account
+                        $sqlActivateUser = "UPDATE merchant SET activated = '1' WHERE m_id = :id LIMIT 1";
+                        $statement = $db->prepare($sqlActivateUser);
+                        $statement->execute(array(':id' => $id));
+
+                        //Remove USer From Trash
+                        $sqlRemoveUser =  "DELETE FROM trash WHERE m_id = :id LIMIT 1";
+                        $statement = $db->prepare($sqlRemoveUser);
+                        $statement->execute(array(':id' => $id));
+
+                        //Login User
+                        prepLogin($id,$email,$remember,$name,$surname,$usertype);
+                    } else {
+                        $result = flashMessage("Please activate your account to login. ");
+                    }
+                } else {
+                    if (password_verify($password, $hashed_password)) {
+                        prepLogin($id,$email,$remember,$name,$surname,$usertype);
+                    } else {
+                        $result = flashMessage("You have entered an invalid password");
+                    }
+                }
+            } else {
+                $result = flashMessage("You have entered and invalid email");
+            }
+
+
+
+
+
+
         } else {
             if (count($form_errors) == 1) {
                

@@ -186,6 +186,25 @@ function checkDuplicateEmail($email, $db)
     }
 }
 
+//Function to check Email
+function checkDuplicateEmail2($email, $db)
+{
+    try {
+        //create SQL query
+        $query = "SELECT m_email FROM merchants WHERE m_email = :email";
+        $statement = $db->prepare($query);
+        $statement->execute(array(':email' => $email));
+
+        if ($row = $statement->fetch()) {
+            return true;
+        } else {
+            return false;
+        }
+    } catch (PDOException $ex) {
+        $result = flashMessage("An error occurred: " . $ex->getMessage());
+    }
+}
+
 //function to remember me
 function rememberMe($user_id)
 {
@@ -297,10 +316,11 @@ function checkDuplicateEntries($table, $column_name, $value, $db)
     }
 }
 
-function prepLogin($id, $email, $remember, $name, $surname)
+function prepLogin($id, $email, $remember, $name, $surname,$usertype)
 {
     $_SESSION['id'] = $id;
     $_SESSION['c_email'] = $email;
+    $_SESSION['usertype'] = $usertype;
 
 
     $fingerprint = md5($_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']);
@@ -315,6 +335,8 @@ function prepLogin($id, $email, $remember, $name, $surname)
     echo "<script>window.open('mykasi.php','_self')</script>";
    
 }
+
+
 
 // Error Messages 
 function errorMessage()
@@ -341,4 +363,51 @@ function successMessage()
         $_SESSION["successMessage"] = null;
         return $output;
     }
+}
+
+
+function isValidImage($file){ 
+    $form_errors = array();
+
+    //split file name into an array using the dot (.)
+    $part = explode(".", $file);
+
+    //target the last element in the array
+    $extension = end($part);
+
+    switch(strtolower($extension)) {
+        case 'jpg';
+        case 'gif';
+        case 'bmp';
+        case 'png';
+        case 'jpeg';
+
+        return $form_errors;
+    }
+
+    $form_errors[] =    $extension . "is not a valid image";
+    return $form_errors;
+}
+
+function uploadShopImage($shop_name) {
+
+
+    if($_FILES['image']['tmp_name']) {
+
+        //fle in the temp location
+        $temp_file1 = $_FILES['image']['tmp_name'];
+
+        $ext1 = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+        $filename1 = $shop_name."shopimage1".".{$ext1}";
+
+
+        $path1 = "images/{$filename1}";
+
+        move_uploaded_file($temp_file1,$path1);
+
+        return $path1;
+        
+    }
+    return false;
 }

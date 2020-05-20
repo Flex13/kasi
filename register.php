@@ -101,7 +101,7 @@ $countIP = $row[0];
 
                     <div class="form-group">
                         <label class="form-label">Contact Details</label>
-                        <input type="tel" name="Cell" size="10" value="<?php if (isset($cell)) echo $cell; ?>" maxlength="12" class="form-control" placeholder="Celpphone number" >
+                        <input type="tel" name="Cell" size="10" value="<?php if (isset($cell)) echo $cell; ?>" maxlength="12" class="form-control" placeholder="Cellphone number" >
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">

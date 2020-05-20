@@ -82,7 +82,8 @@ if (isset($_POST['register'])) {
                             background-color: #00c551 !important
                         }
                     </style>
-                    <div style="background-color: #FF8800; padding: 20px 0; margin:0">
+                    <div style="  background: rgb(106,27,154);
+                    background: linear-gradient(38deg, rgba(106,27,154,1) 22%, rgba(255,136,0,1) 56%, rgba(255,255,255,0.7147233893557423) 100%); padding: 20px 0; margin:0">
                     <div style="max-width:600px; margin:0 auto; padding: 40px; background:#ffffff; font-size: 14px; border:1px solid #cccccc; border-radius: 4px; font-family: arial,sans-serif; line-height: 1.7em; color: #555555">
                     
 

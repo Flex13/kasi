@@ -2,6 +2,8 @@
 include("functions/main.php");
 $page_title = 'Register - Kasi Mall Online';
 include('includes/appheader.php');
+include('functions/classes/shopRegiserApp.class.php');
+
 ?>
 
 <?php
@@ -165,7 +167,7 @@ $countIP = $row[0];
 
                     <div class="form-group">
                         <label class="form-label">About Shop</label>
-                        <textarea class="form-control" name="Description" cols="5" rows="15" placeholder="What type of service or products do you offer?"><?php if (isset($shop_description)) echo $shop_description; ?></textarea>
+                        <textarea class="form-control" name="About" cols="5" rows="15" placeholder="What type of service or products do you offer?"><?php if (isset($shop_description)) echo $shop_description; ?></textarea>
                     </div> <!-- form-group end.// -->
 
                     <input type="button" name="previous" class="previous btn btn-primary-previous" value="Previous" />
@@ -180,7 +182,7 @@ $countIP = $row[0];
 
                     <div class="form-group">
                         <label class="form-label">Email</label>
-                        <input type="Email" name="Shop_Email" size="10" value="<?php if (isset($shop_email)) echo $shop_email; ?>" maxlength="12" class="form-control" placeholder="Business email">
+                        <input type="Email" name="Shop_Email" size="30" value="<?php if (isset($shop_email)) echo $shop_email; ?>" maxlength="60" class="form-control" placeholder="Business email">
                     </div> <!-- form-group end.// -->
 
                     <div class="form-group">
