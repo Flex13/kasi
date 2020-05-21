@@ -247,12 +247,12 @@ div.card.login-card {
 .mykasi-group-item {
     margin: 10px 0px;
     border: 1px solid #ffe0b2;
-    border-top-width: 1px !important;
     color: #6A1B9A;
     font-weight: 500;
-    border-radius: .25rem;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, .1);
+    border-radius: 1rem !important;
+    box-shadow: 0 .1rem 0.2rem rgba(0,0,0,.2)!important;
 }
+
 
 .mykasi-group-item.active {
 z-index: 2;
@@ -476,7 +476,7 @@ a.btn.btn-primary-logout {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: #FF8800;
+    background-color: #FF3500;
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
@@ -484,6 +484,33 @@ a.btn.btn-primary-logout {
 }
 
 a.btn.btn-primary-logout:hover {
+    color: whitesmoke;
+    background-color: #FF6F00 !important;
+    border: none !important;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    padding: .75rem 1.25rem;
+}
+
+input.btn.btn-primary-logout {
+    display: inline-block;
+    font-weight: 500;
+    color: whitesmoke;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #FF3500;
+    border: none;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input.btn.btn-primary-logout:hover {
     color: whitesmoke;
     background-color: #FF6F00 !important;
     border: none !important;
@@ -566,62 +593,22 @@ svg.fa-lock {
     color: #DE1D27;
 }
 
+svg.acoount-heart {
+    color: #DE1D27;
+}
 
-/* Login Model */
+svg.account-pin {
+    color: #00B64F;
+}
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5px auto; /* 15% from the top and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    /* Position it in the top right corner outside of the modal */
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  /* Close button on hover */
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
-  
-  /* Add Zoom Animation */
-  .animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-  }
-  
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)}
-    to {-webkit-transform: scale(1)}
-  }
-  
-  @keyframes animatezoom {
-    from {transform: scale(0)}
-    to {transform: scale(1)}
-  }
+svg.account-orders {
+    color: #1729B0;
+}
+
+svg.account-edit-user {
+    color: #086FA1;
+}
+
+svg.account-trash {
+    color:#FF3500;
+}

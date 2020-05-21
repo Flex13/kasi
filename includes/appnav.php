@@ -21,7 +21,7 @@ $countIP = $row[0];
 
             <div class="col-7 logo-padding ">
                 <ul class="nav justify-content-end nav-padding-top">
-                    <?php if (!isset($_SESSION['c_email'])) : ?>
+                    <?php if (!isset($_SESSION['c_email']) || !isset($_SESSION['id'])) : ?>
                         <li class="nav-item">
                             <a class="nav-link top-nav" href="m_reg.php">Register</a>
                         </li>
@@ -29,17 +29,6 @@ $countIP = $row[0];
                            <!-- <button class="nav-link top-nav" onclick="document.getElementById('id01').style.display='block'">Sign in</button>-->
                             <a class="nav-link top-nav" href="login.php">Sign in</a>
                         </li>
-
-                        
-
-
-
-
-
-
-
-
-
 
                     <?php else : ?>
                         <li class="nav-item">
