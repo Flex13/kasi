@@ -1,0 +1,190 @@
+/* ==== BASE STYLES ====*/
+/* ==================== GLOBAL STYLES ======================= */
+/* ==== Fonts import ====*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gugi&family=Lato&family=Roboto:wght@400&family=Sofia&display=swap');
+
+
+:root {
+  --primary-color: #FF6F00;
+  --light-gray: #2b3032a1;
+  --border: #FF6F00;
+  --text-color: #6A1B9A;
+  --Roboto: "Roboto", sans-serif;
+  --gugi: "Gugi", cursive;
+  --sofia: "Sofia", cursive;
+  --background-color: #fff8e1;
+}
+
+
+body {
+  font-family: "Karla", sans-serif;
+  background: rgb(106, 27, 154);
+  background: linear-gradient(38deg, rgba(106, 27, 154, 1) 22%, rgba(255, 136, 0, 1) 56%, rgba(255, 255, 255, 0.7147233893557423) 100%);
+  min-height: 100vh;
+}
+
+.brand-wrapper {
+  margin-bottom: 19px;
+}
+
+.brand-wrapper .logo {
+  height: 37px;
+}
+
+.login-card {
+  border: 0;
+  border-radius: 27.5px;
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+
+.login-card-img {
+  border-radius: 0;
+  position: absolute;
+  width: 113%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.login-card .card-body {
+  padding: 85px 60px 60px;
+}
+
+@media (max-width: 422px) {
+  .login-card .card-body {
+    padding: 35px 24px;
+  }
+}
+
+.login-card-description {
+  font-size: 25px;
+  color: var(--primary-color);
+  font-weight: normal;
+  font-family: var(--gugi);
+  margin-bottom: 23px;
+}
+
+.login-card form {
+  max-width: 326px;
+}
+
+.login-card .form-control {
+  background-clip: padding-box;
+  background-color: transparent;
+  border: 1px solid #ffe0b2;
+  color: #2c2c2c;
+  -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  min-height: 45px;
+  font-size: 13px;
+  line-height: 15;
+  font-weight: normal;
+}
+
+.login-card .form-control::-webkit-input-placeholder {
+  color: #6A1B9A;
+}
+
+.login-card .form-control::-moz-placeholder {
+  color: #6A1B9A;
+}
+
+.login-card .form-control:-ms-input-placeholder {
+  color: #6A1B9A;
+}
+
+.login-card .form-control::-ms-input-placeholder {
+  color: #6A1B9A;
+}
+
+.login-card .form-control::placeholder {
+  color: #6A1B9A;
+}
+
+.login-card .login-btn {
+  display: inline-block;
+  font-weight: 500;
+  color: whitesmoke;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #FF8800;
+  border: none;
+  padding: .75rem 1.25rem;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.login-card .login-btn:hover {
+  background: linear-gradient(40deg, #ffd86f, #fc6262) !important;
+  border: none !important;
+  color: whitesmoke;
+}
+
+.login-card .forgot-password-link {
+  font-size: 14px;
+  color: #919aa3;
+  margin-bottom: 12px;
+}
+
+.login-card-footer-text {
+  font-size: 16px;
+  color: #0d2366;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+  .login-card-footer-text {
+    margin-bottom: 24px;
+  }
+}
+
+.login-card-footer-nav a {
+  font-size: 14px;
+  color: #919aa3;
+}
+
+
+.error {
+  width: auto;
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #ff4444;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 0;
+  color: #FFFFFF;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+
+
+.success {
+  width: auto;
+  margin: 5px;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #00C851;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 0;
+  color: #FFFFFF;
+  padding-top: .9rem;
+  padding-bottom: .9rem;
+}
+
+/*# sourceMappingURL=login.css.map */
