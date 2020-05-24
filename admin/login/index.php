@@ -2,7 +2,7 @@
 include("functions/main.php");
 $page_title = 'Shop Account - Kasi Mall Online';
 include('includes/header.php');
-include('functions/classes/loginapp.class.php');
+include('functions/classes/loginadmin.class.php');
 ?>
 
 <body>
@@ -38,7 +38,6 @@ include('functions/classes/loginapp.class.php');
                 </div>
                 <input type="submit" name="login" id="login" class="btn btn-block login-btn mb-4" value="Login">
               </form>
-              <a href="#!" class="forgot-password-link">Forgot password?</a>
 
             </div>
           </div>

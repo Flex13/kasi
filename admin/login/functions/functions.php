@@ -153,7 +153,7 @@ function checkDuplicateUsername($username, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT c_username FROM customers WHERE c_username = :username";
+        $query = "SELECT username FROM admins WHERE username = :username";
         $statement = $db->prepare($query);
         $statement->execute(array(':username' => $username));
 
@@ -168,13 +168,13 @@ function checkDuplicateUsername($username, $db)
 }
 
 //Function to check Email
-function checkDuplicateEmail($email, $db)
+function checkDuplicateEmail($a_email, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT c_email FROM customers WHERE c_email = :email";
+        $query = "SELECT email FROM admins WHERE email = :email";
         $statement = $db->prepare($query);
-        $statement->execute(array(':email' => $email));
+        $statement->execute(array(':email' => $a_email));
 
         if ($row = $statement->fetch()) {
             return true;
@@ -186,32 +186,7 @@ function checkDuplicateEmail($email, $db)
     }
 }
 
-//Function to check Email
-function checkDuplicateEmail2($email, $db)
-{
-    try {
-        //create SQL query
-        $query = "SELECT m_email FROM merchants WHERE m_email = :email";
-        $statement = $db->prepare($query);
-        $statement->execute(array(':email' => $email));
 
-        if ($row = $statement->fetch()) {
-            return true;
-        } else {
-            return false;
-        }
-    } catch (PDOException $ex) {
-        $result = flashMessage("An error occurred: " . $ex->getMessage());
-    }
-}
-
-//function to remember me
-function rememberMe($user_id)
-{
-    $encyptCookieData = base64_encode("KasiMallOnline{$user_id}");
-    //Set cookie to expire in abour 30days;
-    setcookie("rememberUserCookie", $encyptCookieData, time() + 60 * 60 * 24 * 100, "/");
-}
 
 //function to check if cookie is valid
 
@@ -250,14 +225,10 @@ function isCookieValid($db)
 
 function signout()
 {
-    unset($_SESSION['id']);
-    unset($_SESSION['c_email']);
+    unset($_SESSION['a_id']);
+    unset($_SESSION['a_email']);
+    unset($_SESSION['a_username']);
 
-
-    if (isset($_COOKIE['rememberUserCookie'])) {
-        unset($_COOKIE['rememberUserCookie']);
-        setcookie('rememberUserCookie', null, -1, '1');
-    }
 
     session_destroy();
     session_regenerate_id(true);
@@ -301,25 +272,11 @@ function validate_token($request_token)
     return false;
 }
 
-function checkDuplicateEntries($table, $column_name, $value, $db)
-{
-    try {
-        $sqlquery = "SELECT * FROM $table WHERE $column_name = :$column_name";
-        $statement = $db->prepare($sqlquery);
-        $statement->execute(array(":column_name" => $value));
 
-        if ($row = $statement->fetch()) {
-            return true;
-        }
-        return false;
-    } catch (PDOException $ex) {
-    }
-}
-
-function prepLogin($id, $email, $remember, $name, $surname,$usertype)
+function prepLogin($id,$a_email,$name,$surname,$usertype)
 {
-    $_SESSION['id'] = $id;
-    $_SESSION['c_email'] = $email;
+    $_SESSION['a_id'] = $id;
+    $_SESSION['a_email'] = $a_email;
     $_SESSION['usertype'] = $usertype;
 
 
@@ -328,12 +285,9 @@ function prepLogin($id, $email, $remember, $name, $surname,$usertype)
     $_SSEION['fingerprint'] = $fingerprint;
 
 
-    if ($remember === "yes") {
-        rememberMe($id);
-    }
+
     $_SESSION["errorMessage"] =  "Welcome .' $name '. '$surname '.";
-    echo "<script>window.open('mykasi.php','_self')</script>";
-   
+    echo "<script>window.open('../index.php','_self')</script>";
 }
 
 

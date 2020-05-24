@@ -1,0 +1,29 @@
+.error {
+    width: auto;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f55145;
+    margin-bottom: 1rem;
+    border: 0;
+    color: #FFFFFF;
+    padding: 20px 15px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(244,67,54,.4);
+
+}
+
+
+.success {
+    width: auto;
+    margin: 5px;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #55b559;
+    color: #fff;
+    margin-bottom: 1rem;
+    border: 0;
+    padding: 20px 15px;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(76,175,80,.4);
+}
+
