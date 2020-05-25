@@ -48,24 +48,7 @@ function check_empty_fields($required_fields_array)
 }
 
 
-/**
- * @param $required_fields_array, n array containing the list of all required fields
- * @return array, containing all errors
- */
-function check_empty_date($required_fields_date)
-{
-    //initialize an array to store error messages
-    $form_errors = array();
 
-    //loop through the required fields array snd popular the form error array
-    foreach ($required_fields_date as $name_of_field) {
-        if (!isset($_POST[$name_of_field]) || $_POST[$name_of_field] == NULL) {
-            $form_errors[] = $name_of_field . " of Birth is required";
-        }
-    }
-
-    return $form_errors;
-}
 
 /**
  * @param $fields_to_check_length, an array containing the name of fields
@@ -149,13 +132,13 @@ function redirectTo($page)
 
 
 //Function to check username
-function checkDuplicateUsername($username, $db)
+function checkDuplicateUsername($m_username, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT username FROM admins WHERE username = :username";
+        $query = "SELECT username FROM merchant WHERE m_username = :username";
         $statement = $db->prepare($query);
-        $statement->execute(array(':username' => $username));
+        $statement->execute(array(':username' => $m_username));
 
         if ($row = $statement->fetch()) {
             return true;
@@ -168,13 +151,13 @@ function checkDuplicateUsername($username, $db)
 }
 
 //Function to check Email
-function checkDuplicateEmail($a_email, $db)
+function checkDuplicateEmail2($m_email, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT email FROM admins WHERE email = :email";
+        $query = "SELECT email FROM merchant WHERE m_email = :email";
         $statement = $db->prepare($query);
-        $statement->execute(array(':email' => $a_email));
+        $statement->execute(array(':email' => $m_email));
 
         if ($row = $statement->fetch()) {
             return true;
@@ -186,54 +169,6 @@ function checkDuplicateEmail($a_email, $db)
     }
 }
 
-
-
-//function to check if cookie is valid
-
-function isCookieValid($db)
-{
-    $isValid = false;
-
-    if (isset($_COOKIE['rememberUserCookie'])) {
-
-        //Decode the cookie and get userID
-        $decryptCookieData = base64_decode($_COOKIE['rememberUserCookie']);
-        $user_id = explode("KasiMallOnline", $decryptCookieData);
-        $userID = $user_id[1];
-
-        // check id from cookie is in the database
-        $sqlquery = "SELECT * FROM customers WHERE id = :id";
-        $statement = $db->prepare($sqlquery);
-        $statement->execute(array(':id' => $userID));
-
-        if ($row = $statement->fetch()) {
-            $id = $row['id'];
-            $username = $row['c_username'];
-
-            //Create User session Variables
-            $_SESSION['id'] = $id;
-            $_SESSION['c_username'] = $username;
-            $isValid = true;
-        } else {
-            // Cookie ID is invalid Destroy Session and logout User
-            $isValid = False;
-            signout();
-        }
-    }
-    return $isValid;
-}
-
-function signout()
-{
-    unset($_SESSION['a_id']);
-    unset($_SESSION['a_email']);
-    unset($_SESSION['a_username']);
-
-
-    session_destroy();
-    session_regenerate_id(true);
-    redirectTo('index.php');
-}
 
 function guard()
 {
@@ -273,31 +208,12 @@ function validate_token($request_token)
 }
 
 
-function prepLogin($id,$a_email,$name,$surname,$usertype)
-{
-    $_SESSION['a_id'] = $id;
-    $_SESSION['a_email'] = $a_email;
-    $_SESSION['usertype'] = $usertype;
-
-
-    $fingerprint = md5($_SERVER['REMOTE_ADDR'] . $_SERVER['HTTP_USER_AGENT']);
-    $_SESSION['last_active'] = time();
-    $_SSEION['fingerprint'] = $fingerprint;
-
-
-
-    $_SESSION["errorMessage"] =  "Welcome .' $name '. '$surname '.";
-    echo "<script>window.open('../index.php','_self')</script>";
-}
-
-
-
 // Error Messages 
 function errorMessage()
 {
 
     if (isset($_SESSION["errorMessage"])) {
-        $output = "<div class='alert error text-center'>";
+        $output = "<div class='alert alert-danger text-center'>";
         $output .= htmlentities($_SESSION['errorMessage']);
         $output .= "</div>";
         $_SESSION["errorMessage"] = null;
@@ -311,7 +227,7 @@ function successMessage()
 {
 
     if (isset($_SESSION["successMessage"])) {
-        $output = "<div class='alert success text-center'>";
+        $output = "<div class='alert alert-success text-center'>";
         $output .= htmlentities($_SESSION['successMessage']);
         $output .= "</div>";
         $_SESSION["successMessage"] = null;
@@ -320,48 +236,3 @@ function successMessage()
 }
 
 
-function isValidImage($file){ 
-    $form_errors = array();
-
-    //split file name into an array using the dot (.)
-    $part = explode(".", $file);
-
-    //target the last element in the array
-    $extension = end($part);
-
-    switch(strtolower($extension)) {
-        case 'jpg';
-        case 'gif';
-        case 'bmp';
-        case 'png';
-        case 'jpeg';
-
-        return $form_errors;
-    }
-
-    $form_errors[] =    $extension . "is not a valid image";
-    return $form_errors;
-}
-
-function uploadShopImage($shop_name) {
-
-
-    if($_FILES['image']['tmp_name']) {
-
-        //fle in the temp location
-        $temp_file1 = $_FILES['image']['tmp_name'];
-
-        $ext1 = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-
-        $filename1 = $shop_name."shopimage1".".{$ext1}";
-
-
-        $path1 = "images/{$filename1}";
-
-        move_uploaded_file($temp_file1,$path1);
-
-        return $path1;
-        
-    }
-    return false;
-}

@@ -23,10 +23,10 @@
         </a>
       </li>
 
-      <li class="nav-item <?php if ($page_title == 'Customers - Kasi Mall Online') {
+      <li class="nav-item <?php if ($page_title == 'Customer - Kasi Mall Online') {
                               echo "active";
                             } ?>">
-        <a class="nav-link" href="customers.php">
+        <a class="nav-link" href="customer.php?customer">
           <i class="material-icons">person</i>
           <p>Customer</p>
         </a>
