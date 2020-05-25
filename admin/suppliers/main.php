@@ -9,9 +9,7 @@ include('functions/classes/main.class.php');
             <div class="card-header card-header-primary">
                 <h4 class="card-title ">Kasi Mall Suppliers</h4>
                 <p class="card-category"> List of all Suppliers on Kasi Mall</p>
-                <a class="btn btn-primary btn-round" href="supplier.php?add">
-                    <i class="material-icons">storefront</i> Add Supplier
-                </a>
+                <a class="btn btn-primary btn-round" href="supplier.php?add"><i class="material-icons">storefront</i> Add Supplier</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

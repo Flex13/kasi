@@ -17,4 +17,5 @@
   
   <link href="assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>

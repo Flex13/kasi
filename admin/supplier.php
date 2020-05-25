@@ -36,6 +36,24 @@ include('includes/header.php');
                         include("suppliers/add.php");
                     }
                     ?>
+
+                    <?php
+                    if (isset($_GET['view'])) {
+                        include("suppliers/view.php");
+                    }
+                    ?>
+
+<?php
+                    if (isset($_GET['edit'])) {
+                        include("suppliers/edit.php");
+                    }
+                    ?>
+
+                    <?php
+                    if (isset($_GET['pass'])) {
+                        include("suppliers/pass.php");
+                    }
+                    ?>
                 </div>
             </div>
 
