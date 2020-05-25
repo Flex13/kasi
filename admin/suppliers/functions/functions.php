@@ -132,13 +132,13 @@ function redirectTo($page)
 
 
 //Function to check username
-function checkDuplicateUsername($a_username, $db)
+function checkDuplicateUsername($m_username, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT username FROM admins WHERE username = :username";
+        $query = "SELECT username FROM merchant WHERE m_username = :username";
         $statement = $db->prepare($query);
-        $statement->execute(array(':username' => $a_username));
+        $statement->execute(array(':username' => $m_username));
 
         if ($row = $statement->fetch()) {
             return true;
@@ -151,13 +151,13 @@ function checkDuplicateUsername($a_username, $db)
 }
 
 //Function to check Email
-function checkDuplicateEmail2($a_email, $db)
+function checkDuplicateEmail2($m_email, $db)
 {
     try {
         //create SQL query
-        $query = "SELECT email FROM admins WHERE email = :email";
+        $query = "SELECT email FROM merchant WHERE m_email = :email";
         $statement = $db->prepare($query);
-        $statement->execute(array(':email' => $a_email));
+        $statement->execute(array(':email' => $m_email));
 
         if ($row = $statement->fetch()) {
             return true;

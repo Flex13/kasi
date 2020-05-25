@@ -1,5 +1,3 @@
-
-
 <?php $page_title = 'Suppliers - Kasi Mall Online'; ?>
 <?php
 include('includes/header.php');
@@ -23,6 +21,8 @@ include('includes/header.php');
 
             <div class="content">
                 <div class="container-fluid">
+                <?php if (isset($result)) echo $result; ?>
+                <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
 
 
                     <?php

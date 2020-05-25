@@ -23,7 +23,7 @@ include('includes/header.php');
             <div class="content">
                 <div class="container-fluid">
                 <?php if (isset($result)) echo $result; ?>
-    <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
+                <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
 
 
                     <?php
