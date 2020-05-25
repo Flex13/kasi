@@ -6,6 +6,10 @@ include('functions/classes/view.class.php');
 
 
 <div class="col-md-12">
+<div class="mb-4 login-card mx-auto" style="max-width:550px;">
+            <?php if (isset($result)) echo $result; ?>
+            <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
+        </div>
     <div class="card card-profile">
         <div class="card-avatar">
             <a href="javascript:;">
@@ -141,7 +145,7 @@ include('functions/classes/view.class.php');
 
                     <div class="row">
                         <div class="col-md-6">
-                            <a class="btn btn-success btn-round btn-block" href="supplier.php?edit=<?php if (isset($shop_id)) echo $shop_id; ?>"><i class="material-icons">create</i> Edit Profile</a>
+                            <a class="btn btn-primary btn-round btn-block" href="supplier.php?edit=<?php if (isset($shop_id)) echo $shop_id; ?>"><i class="material-icons">create</i> Edit Profile</a>
                             <a class="btn btn-warning btn-round btn-block" href="supplier.php?pass=<?php if (isset($shop_id)) echo $shop_id; ?>"><i class="material-icons">enhanced_encryption</i> Change Password</a>
                         </div>
 
@@ -149,16 +153,20 @@ include('functions/classes/view.class.php');
 
                         <div class="col-md-6">
                             <a class="btn btn-info btn-round btn-block" href="supplier.php?v_products=<?php if (isset($shop_id)) echo $shop_id; ?>"><i class="material-icons">visibility</i> View Products</a>
-                            <a class="btn btn-primary btn-round btn-block" href="supplier.php?add_products=<?php if (isset($shop_id)) echo $shop_id; ?>"><i class="material-icons">add_box</i> Add Products</a>
+                            <form id="regiration_form" novalidate action="" method="post">
+                            <input type="hidden" name="hidden_id" value="<?php if (isset($shop_id)) echo $shop_id; ?>"/>
+                                <?php
+                                if ($activated == '1') : ?>
+                                    <button type="submit" name="deactivate" class="btn btn-danger btn-round btn-block">Deactivate Account</button>
+                                <?php else : ?>
+                                    <button type="submit" name="activate" class="btn btn-success btn-round btn-block">Activate Account</button>
+                                <?php endif ?>
+                            </form>
                         </div>
+
                     </div>
 
-                    <?php
-                    if ($activated == '1') : ?>
-                        <button type="submit" name="registersupplier" class="btn btn-danger btn-block">Deactivate Account</button>
-                    <?php else : ?>
-                        <button type="submit" name="registersupplier" class="btn btn-success btn-block">Activate Account</button>
-                    <?php endif ?>
+
 
 
 

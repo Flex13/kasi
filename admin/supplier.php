@@ -54,6 +54,16 @@ include('includes/header.php');
                         include("suppliers/pass.php");
                     }
                     ?>
+                     <?php
+                    if (isset($_GET['v_products'])) {
+                        include("suppliers/products.php");
+                    }
+                    ?>
+                    <?php
+                    if (isset($_GET['add_products'])) {
+                        include("suppliers/add_product.php");
+                    }
+                    ?>
                 </div>
             </div>
 
