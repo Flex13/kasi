@@ -85,7 +85,7 @@ include('functions/classes/main.class.php');
                                             ?>
                                     </td>
                                     <td class="td-actions">
-                                        <a class="btn btn-success btn-round btn-block" href="supplier.php?view=<?php if (isset($id)) echo $id; ?>">
+                                        <a class="btn btn-success btn-round btn-block" href="customer.php?view=<?php if (isset($id)) echo $id; ?>">
                                             <i class="material-icons">visibility</i> View
                                         </a>
                                 </tr>

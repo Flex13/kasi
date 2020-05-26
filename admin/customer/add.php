@@ -29,12 +29,12 @@ include('functions/classes/registerCustomer.class.php');
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="text" class="form-control" id="username" value="<?php if (isset($m_username)) echo $m_username; ?>" name="Username" placeholder="Username">
+                  <input type="text" class="form-control" id="username" value="<?php if (isset($c_username)) echo $c_username; ?>" name="Username" placeholder="Username">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="email" name="Email" size="32" value="<?php if (isset($m_email)) echo $m_email; ?>" maxlength="60" class="form-control" placeholder="Email address" />
+                  <input type="email" name="Email" size="32" value="<?php if (isset($c_email)) echo $c_email; ?>" maxlength="60" class="form-control" placeholder="Email address" />
                 </div>
               </div>
             </div>
@@ -56,7 +56,7 @@ include('functions/classes/registerCustomer.class.php');
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <h4><b>Owner Details</b></h4>
+                  <h4><b>Customer Details</b></h4>
                 </div>
               </div>
             </div>
@@ -64,12 +64,12 @@ include('functions/classes/registerCustomer.class.php');
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="text" name="Name" size="32" maxlength="60" value="<?php if (isset($m_name)) echo $m_name; ?>" class="form-control" placeholder="First Name" />
+                  <input type="text" name="Name" size="32" maxlength="60" value="<?php if (isset($c_name)) echo $c_name; ?>" class="form-control" placeholder="First Name" />
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="text" name="Surname" size="32" maxlength="60" value="<?php if (isset($m_surname)) echo $m_surname; ?>" class="form-control" placeholder="Surname" />
+                  <input type="text" name="Surname" size="32" maxlength="60" value="<?php if (isset($c_surname)) echo $c_surname; ?>" class="form-control" placeholder="Surname" />
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ include('functions/classes/registerCustomer.class.php');
               </div>
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="tel" name="Cell" size="10" value="<?php if (isset($m_cell)) echo $m_cell; ?>" maxlength="12" class="form-control" placeholder="Cellphone number">
+                  <input type="tel" name="Cell" size="10" value="<?php if (isset($c_cell)) echo $c_cell; ?>" maxlength="12" class="form-control" placeholder="Cellphone number">
                 </div>
               </div>
 
@@ -98,7 +98,7 @@ include('functions/classes/registerCustomer.class.php');
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group bmd-form-group">
-                  <input type="text" name="Address" size="32" value="<?php if (isset($street_address)) echo $street_address; ?>" maxlength="60" class="form-control" placeholder="Street Address">
+                  <input type="text" name="Address" size="32" value="<?php if (isset($c_street_address)) echo $c_street_address; ?>" maxlength="60" class="form-control" placeholder="Street Address">
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ include('functions/classes/registerCustomer.class.php');
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group bmd-form-group">
-                  <input type="text" name="City" size="32" value="<?php if (isset($city)) echo $city; ?>" maxlength="60" class="form-control" placeholder="City">
+                  <input type="text" name="City" size="32" value="<?php if (isset($c_city)) echo $c_city; ?>" maxlength="60" class="form-control" placeholder="City">
                 </div>
               </div>
             </div>
@@ -146,100 +146,7 @@ include('functions/classes/registerCustomer.class.php');
              <div class="row">
               <div class="col-md-12">
                 <div class="form-group bmd-form-group">
-                <input type="text" name="Zip" size="10" value="<?php if (isset($zip)) echo $zip; ?>" maxlength="10" class="form-control" placeholder="Zip code">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
-                  <h4><b>Shop Details</b></h4>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <input type="text" name="Shop_Name" size="32" maxlength="60" value="<?php if (isset($shop_name)) echo $shop_name; ?>" class="form-control" placeholder="Shop name"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <textarea class="form-control" name="About" cols="5" rows="8" placeholder="What type of service or products do you offer?"><?php if (isset($shop_description)) echo $shop_description; ?></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group bmd-form-group">
-                <input type="email" name="Shop_Email" size="30" value="<?php if (isset($shop_email)) echo $shop_email; ?>" maxlength="60" class="form-control" placeholder="Business email">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group bmd-form-group">
-                <input type="tel" name="Shop_Cell" size="10" value="<?php if (isset($shop_cell)) echo $shop_cell; ?>" maxlength="12" class="form-control" placeholder="Business cell">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <input type="text" name="Shop_Address" size="32" value="<?php if (isset($shop_address)) echo $street_address; ?>" maxlength="60" class="form-control" placeholder="Business address">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <input type="text" name="Shop_City" size="32" value="<?php if (isset($shop_city)) echo $shop_city; ?>" maxlength="60" class="form-control" placeholder="Business city">
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <select id="inputCity" name="Shop_Kasi" class="form-control">
-                    <option> Choose Kasi</option>
-                    <option value="Vaal">Vaal</option>
-                    <option value="Soweto">Soweto</option>
-                    <option value="Alex">Alex</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <select id="inputProvince" name="Shop_Province" class="form-control">
-                    <option> Choose Province</option>
-                    <option value="Gauteng">Gauteng</option>
-                    <option value="Free State">Free State</option>
-                    <option value="Kwa Zulu-Natal">Kwa Zulu-Natal</option>
-                    <option value="Eastern Cape">Eastern Cape</option>
-                    <option value="Limpopo">Limpopo</option>
-                    <option value="Western Cape">Western Cape</option>
-                    <option value="Mpumalanga">Mpumalanaga</option>
-                    <option value="Northan Cape">Northan Cape</option>
-                    <option value="North West">North West</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-             <div class="row">
-              <div class="col-md-12">
-                <div class="form-group bmd-form-group">
-                <input type="text" name="Shop_Zip" size="10" value="<?php if (isset($shop_zip)) echo $shop_zip; ?>" maxlength="10" class="form-control" placeholder="Zip code">
+                <input type="text" name="Zip" size="10" value="<?php if (isset($c_zip)) echo $c_zip; ?>" maxlength="10" class="form-control" placeholder="Zip code">
                 </div>
               </div>
             </div>
@@ -248,8 +155,8 @@ include('functions/classes/registerCustomer.class.php');
 
 
 
-            <button type="submit" name="registersupplier" class="btn btn-primary pull-right">Create Account</button>
-            <a class="btn btn-danger pull-left" href="supplier.php?suppliers">
+            <button type="submit" name="registercustomer" class="btn btn-primary pull-right">Create Account</button>
+            <a class="btn btn-danger pull-left" href="customer.php?customer">
               <i class="material-icons">arrow_back</i> Back
             </a>
             <div class="clearfix"></div>

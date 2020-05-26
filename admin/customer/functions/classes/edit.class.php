@@ -1,41 +1,35 @@
 <?php
 
-if ((isset($_SESSION['a_id']) || isset($_GET['edit'])) && !isset($_POST['editsupplier'])) {
+if ((isset($_SESSION['a_id']) || isset($_GET['edit'])) && !isset($_POST['editcustomer'])) {
     if (isset($_GET['edit'])) {
-        $shop_id = $_GET['edit'];
+        $user_id = $_GET['edit'];
     } else {
         $id = $_SESSION['a_id'];
     }
 
-    $sqlQuery = "SELECT * FROM merchant WHERE m_id = :m_id";
+    $sqlQuery = "SELECT * FROM customers WHERE id = :id";
     $statement = $db->prepare($sqlQuery);
-    $statement->execute(array(':m_id' => $shop_id));
+    $statement->execute(array(':id' => $user_id));
 
     while ($rs = $statement->fetch()) {
-        $shop_id = $rs['m_id'];
-        $shop_email = $rs['shop_email'];
-        $shop_cell = $rs['shop_cell'];
-        $shop_province = $rs['shop_province'];
-        $shop_city = $rs['shop_city'];
-        $shop_kasi = $rs['shop_kasi'];
-        $shop_address = $rs['shop_address'];
-        $shop_zip = $rs['shop_zip'];
-        $shop_name = $rs['m_shop_name'];
-        $shop_description = $rs['m_description'];
-
-        $m_username = $rs['m_username'];
-        $m_gender = $rs['m_gender'];
-        $m_name = $rs['m_firstname'];
-        $m_surname = $rs['m_surname'];
-        $m_email = $rs['m_email'];
-        $m_cell = $rs['m_contact'];
-        $m_province = $rs['m_province'];
-        $m_city = $rs['m_city'];
-        $m_street_address = $rs['m_street_address'];
-        $m_zip = $rs['m_zip'];
-        $m_kasi = $rs['m_kasi'];
+        $id = $rs['id'];
+        $c_username = $rs['c_username'];
+        $c_email = $rs['c_email'];
+        $c_name = $rs['c_firstname'];
+        $c_surname  = $rs['c_surname'];
+        $c_cell  = $rs['c_contact'];
+        $c_gender  = $rs['c_gender'];
+        $c_country  = $rs['c_country'];
+        $c_province  = $rs['c_province'];
+        $c_city  = $rs['c_city'];
+        $c_kasi  = $rs['c_kasi'];
+        $c_street_address  = $rs['c_street_address'];
+        $c_zip  = $rs['c_zip'];
+        $c_image  = $rs['c_image'];
+        $activated = $rs['activated'];
+        $reg_date = $rs['c_reg_date'];
     }
-} else if (isset($_POST['editsupplier'])) {
+} else if (isset($_POST['editcustomer'])) {
 
 
 
@@ -43,7 +37,7 @@ if ((isset($_SESSION['a_id']) || isset($_GET['edit'])) && !isset($_POST['editsup
     $form_errors = array();
 
     //Form validation to be passed to function of check_empty_fields();
-    $required_fields = array('Name', 'Surname', 'Email', 'Username', 'Gender', 'Cell', 'Province', 'Kasi', 'Address', 'Zip', 'City', 'Shop_Name', 'About', 'Shop_Province', 'Shop_Kasi', 'Shop_Address', 'Shop_Zip', 'Shop_City', 'Shop_Email', 'Shop_Cell');
+    $required_fields = array('Name', 'Surname', 'Email','Username', 'Gender', 'Cell', 'Province', 'Kasi', 'Address', 'Zip', 'City');
 
     //call the function to check empty field and merge the return data into form_error array
     $form_errors = array_merge($form_errors, check_empty_fields($required_fields));
@@ -61,28 +55,18 @@ if ((isset($_SESSION['a_id']) || isset($_GET['edit'])) && !isset($_POST['editsup
 
 
     // Get all records from inputs
-    $m_name               = $_POST['Name'];
-    $m_surname            = $_POST['Surname'];
-    $m_email              = $_POST['Email'];
-    $m_username         = $_POST['Username'];
-    $m_cell        = $_POST['Cell'];
-    $m_province         = $_POST['Province'];
-    $m_kasi         = $_POST['Kasi'];
-    $m_city         = $_POST['City'];
-    $m_street_address         = $_POST['Address'];
-    $m_zip         = $_POST['Zip'];
-    $m_gender  = $_POST['Gender'];
-
-    $shop_name        = $_POST['Shop_Name'];
-    $shop_description        = $_POST['About'];
-    $shop_email              = $_POST['Shop_Email'];
-    $shop_cell        = $_POST['Shop_Cell'];
-    $shop_province         = $_POST['Shop_Province'];
-    $shop_kasi         = $_POST['Shop_Kasi'];
-    $shop_city         = $_POST['Shop_City'];
-    $shop_address         = $_POST['Shop_Address'];
-    $shop_zip         = $_POST['Shop_Zip'];
-    $hidden_id        = $_POST['hidden_id'];
+    $c_name               = $_POST['Name'];
+    $c_surname            = $_POST['Surname'];
+    $c_email              = $_POST['Email'];
+    $c_username         = $_POST['Username'];
+    $c_cell        = $_POST['Cell'];
+    $c_province         = $_POST['Province'];
+    $c_kasi         = $_POST['Kasi'];
+    $c_city         = $_POST['City'];
+    $c_street_address         = $_POST['Address'];
+    $c_zip         = $_POST['Zip'];
+    $c_gender         = $_POST['Gender'];
+    $id = $_GET['edit'];
 
 
 
@@ -90,38 +74,31 @@ if ((isset($_SESSION['a_id']) || isset($_GET['edit'])) && !isset($_POST['editsup
         try {
 
             // create sql to insert into database
-            $update_supplier = "UPDATE merchant SET 
-            m_username=:m_username,
-            m_email=:m_email,
-            m_shop_name=:m_shopname,
-            m_contact=:m_contact,
-            m_province=:m_province,
-            m_city=:m_city,
-            m_kasi=:m_kasi,
-            m_gender=:m_gender,
-            m_firstname=:m_firstname,
-            m_surname=:m_surname,
-            m_street_address=:m_street_address,
-            m_zip=:m_zip,
-            m_description=:m_description,
-            shop_email=:shop_email,
-            shop_cell=:shop_cell,
-            shop_province=:shop_province,
-            shop_city=:shop_city,
-            shop_kasi=:shop_kasi,
-            shop_address=:shop_address,
-            shop_zip=:shop_zip
-            WHERE m_id =:id ";
+            $update_customer = "UPDATE customers SET 
+            c_username=:username,
+            c_email=:email,
+            c_contact=:contact,
+            c_province=:province,
+            c_city=:city,
+            c_kasi=:kasi,
+            c_gender=:gender,
+            c_firstname=:name,
+            c_surname=:surname,
+            c_street_address=:street_address,
+            c_zip=:zip
+            WHERE id =:id ";
 
             // use PDO to prepare and sanitize the data
-            $statement = $db->prepare($update_supplier);
+            $statement = $db->prepare($update_customer);
 
             // Add the data into the database 
-            $statement->execute(array(':m_username' => $m_username, ':m_email' => $m_email, ':m_firstname' => $m_name, ':m_surname' => $m_surname, ':m_contact' => $m_cell, ':m_gender' => $m_gender, ':m_province' => $m_province, ':m_city' => $m_city, ':m_kasi' => $m_kasi, ':m_street_address' => $m_street_address, ':m_zip' => $m_zip, ':m_shopname' => $shop_name, ':m_description' => $shop_description, ':shop_email' => $shop_email, ':shop_cell' => $shop_cell, ':shop_province' => $shop_province, ':shop_city' => $shop_city, ':shop_kasi' => $shop_kasi, ':shop_address' => $shop_address, ':shop_zip' => $shop_zip,':id' => $hidden_id));
+            $statement->execute(array(':username' => $c_username, ':email' => $c_email,':name' => $c_name, ':surname' => $c_surname, ':contact' => $c_cell, ':gender' => $c_gender, ':province' => $c_province, ':city' => $c_city, ':kasi' => $c_kasi, ':street_address' => $c_street_address, ':zip' => $c_zip,':id' => $id));
 
             //Check is one data was created in database the echo result
             if ($statement->rowcount() == 1) {
-                $result = flashMEssage("Supplier Updated", "Pass");
+                $result = flashMEssage("Customer Updated", "Pass");
+            } else {
+                $result = flashMEssage("Did not update");
             }
         } catch (PDOException $ex) {
             $result = flashMessage("An Error Occerred" . $ex->getMessage());

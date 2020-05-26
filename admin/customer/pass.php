@@ -13,7 +13,7 @@ include('functions/classes/pass.class.php');
 
         <div class="card login-card mx-auto" style="max-width:450px;">
             <div class="card-header card-header-primary">
-                <h4 class="card-title">Supplier Password</h4>
+                <h4 class="card-title">Customer Password</h4>
                 <p class="card-category">Change Password</p>
             </div>
             <div class="card-body">
@@ -33,9 +33,8 @@ include('functions/classes/pass.class.php');
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" name="hidden_id" value="<?php if (isset($shop_id)) echo $shop_id; ?>"/>
                         <button type="submit" name="updatePassword" class="btn btn-primary pull-right">Update Password</button>
-                        <a class="btn btn-danger pull-left" href="supplier.php?view=<?php if (isset($_GET['pass'])) echo $_GET['pass']; ?>">
+                        <a class="btn btn-danger pull-left" href="customer.php?view=<?php if (isset($_GET['pass'])) echo $_GET['pass']; ?>">
                             <i class="material-icons">arrow_back</i> Back
                         </a>
                         <div class="clearfix"></div>

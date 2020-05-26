@@ -4,18 +4,18 @@
 
 if ((isset($_SESSION['a_id']) || isset($_GET['pass'])) && !isset($_POST['updatePassword'])) {
     if (isset($_GET['pass'])) {
-        $shop_id = $_GET['pass'];
+        $user_id = $_GET['pass'];
     } else {
         $id = $_SESSION['a_id'];
     }
 
-    $sqlQuery = "SELECT * FROM merchant WHERE m_id = :m_id";
+    $sqlQuery = "SELECT * FROM customers WHERE id = :id";
     $statement = $db->prepare($sqlQuery);
-    $statement->execute(array(':m_id' => $shop_id));
+    $statement->execute(array(':id' => $user_id));
 
     while ($rs = $statement->fetch()) {
-        $DB_password = $rs['m_password'];
-        $shop_id = $rs['m_id'];
+        $DB_password = $rs['c_password'];
+        $user_id = $rs['id'];
     }
 } else if (isset($_POST['updatePassword'])) {
 
@@ -38,7 +38,7 @@ if ((isset($_SESSION['a_id']) || isset($_GET['pass'])) && !isset($_POST['updateP
             // Get all records from inputs
             $newpassword         = $_POST['Password'];
             $confirmpassword            = $_POST['Password2'];
-            $id =                 $_POST['hidden_id'];
+            $id =                 $_GET['pass'];
 
             if ($newpassword != $confirmpassword) {
                 $result = flashMEssage("New Password does not match confirm Confirm Password");
@@ -48,7 +48,7 @@ if ((isset($_SESSION['a_id']) || isset($_GET['pass'])) && !isset($_POST['updateP
 
                             $hashed_password = password_hash($newpassword, PASSWORD_DEFAULT);
                             //check current password matches in database
-                            $sqlQuery = "UPDATE merchant SET m_password = :password WHERE m_id = :id";
+                            $sqlQuery = "UPDATE customers SET c_password = :password WHERE id = :id";
 
                             // use PDO to prepare and sanitize the data
                             $statement = $db->prepare($sqlQuery);
