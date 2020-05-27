@@ -23,6 +23,15 @@
         </a>
       </li>
 
+      <li class="nav-item <?php if ($page_title == 'Amakasi - Kasi Mall Online') {
+                              echo "active";
+                            } ?>">
+        <a class="nav-link" href="amakasi.php?amakasi">
+          <i class="material-icons">place</i>
+          <p>Amakasi</p>
+        </a>
+      </li>
+
       <li class="nav-item <?php if ($page_title == 'Customer - Kasi Mall Online') {
                               echo "active";
                             } ?>">
