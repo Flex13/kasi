@@ -471,7 +471,7 @@ p:last-child {
 .brand-wrap .logo,
 .navbar-brand .logo {
   margin-right: 7px;
-  max-height: 70px;
+  max-height: 90px;
   display: inline-block;
 }
 
@@ -2029,8 +2029,10 @@ p:last-child {
 .brand-wrap .logo,
 .navbar-brand .logo {
   margin-right: 7px;
-  max-height: 150px;
+  max-height: 100px;
+  /* height: 10px; */
   display: inline-block;
+  padding-top: 10px;
 }
 
 .brand-wrap .logo-login,

@@ -13,24 +13,29 @@ $countIP = $row[0];
 
 
 <section class="header-main">
-    <div class="container p-0">
+    <div class="container">
         <div class="row">
-            <div class="col-5 logo-padding">
-                <a href="index.php" class="brand-wrap"><img class="logo" src="images/kasilogo.jpg"></a>
+            
+
+            <div class="col-5 logo-padding ">
+                <a href="index.php" class="brand-wrap"><img class="logo img-fluid" src="images/kasi-logo.jpg"></a>
             </div>
 
-            <div class="col-7 logo-padding ">
-                <ul class="nav justify-content-end nav-padding-top">
-                    <?php if (!isset($_SESSION['c_email']) || !isset($_SESSION['id'])) : ?>
-                        <li class="nav-item">
-                            <a class="nav-link top-nav" href="m_reg.php">Register</a>
-                        </li>
-                        <li class="nav-item">
-                           <!-- <button class="nav-link top-nav" onclick="document.getElementById('id01').style.display='block'">Sign in</button>-->
-                            <a class="nav-link top-nav" href="login.php">Sign in</a>
-                        </li>
+            
+            
 
-                    <?php else : ?>
+            
+            <div class="col-7 logo-padding">    
+				<div class="d-flex justify-content-end nav-padding-top">
+					<div class="widget-header sign-in">
+						<small class="title text-muted">Welcome guest!</small>
+						<div> 
+                        <?php if (!isset($_SESSION['c_email']) || !isset($_SESSION['id'])) : ?>
+							<a class=" text-dark top-nav" href="login.php">Sign in</a> 
+                            <span class="dark-transp"> | </span>
+							<a class="top-nav" href="m_reg.php"> Register</a>
+
+                        <?php else : ?>
                         <li class="nav-item">
                             <a class="nav-link top-nav" href="logout.php">Logout</a>
                         </li>
@@ -38,10 +43,12 @@ $countIP = $row[0];
                             <a class="nav-link top-nav" href="mykasi.php"><?php if (isset($name)) echo $name; ?> <i class=" ml-2 header-icons fas fa-user"></i></a>
                         </li>
                     <?php endif ?>
-                </ul>
 
-
-            </div>
+						</div>
+					</div>
+				</div> <!-- widgets-wrap.// -->
+			</div>
+           
         </div>
 
     </div> <!-- container.// -->
@@ -78,5 +85,5 @@ $countIP = $row[0];
             </li>
         </ul>
     </nav>
-    </>
+                                            </section>
     </header> <!-- section-header.// -->

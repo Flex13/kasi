@@ -7,8 +7,8 @@ include('includes/appheader.php');
 <body class="reg-background">
     <section class="container-fluid">
 
-        <div class="card login-card-reg mx-auto" style="max-width: 400px; padding-top: 130px;">
-            <div class="card-body">
+    <div class="card login-card-reg mx-auto" style="max-width: 480px;">
+            <div class="card-body py-0">
                 <div class="container section-heading">
                     <h2 class="reg-title text-center">Registration </h2>
                 </div>

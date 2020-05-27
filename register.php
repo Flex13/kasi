@@ -17,12 +17,13 @@ $countIP = $row[0];
 
 ?>
 
+
 <section class="container login-section" style="margin-bottom: 100px;">
-    <?php include('includes/includes_main.php'); ?>
+<?php include('includes/includes_main.php'); ?>
 
 
     <div class="card login-card mx-auto" style="max-width:550px; border: 1px solid red;">
-        <article class="card-body">
+        <article class="card-body py-0">
             <header class="mb-4">
                 <?php if (isset($result)) echo $result; ?>
                 <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>

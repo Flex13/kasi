@@ -290,13 +290,14 @@ body {
 
 body.reg-background {
   font-weight: 400;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
   height: 100vh;
-
-  background: rgb(106,27,154);
-background: linear-gradient(38deg, rgba(106,27,154,1) 22%, rgba(255,136,0,1) 56%, rgba(255,255,255,0.7147233893557423) 100%);
+  width: 100vw;
+  padding-top: 100px;
+  /* background: rgb(106,27,154); */
+  background: linear-gradient(38deg, rgba(106,27,154,1) 22%, rgba(255,136,0,1) 56%, rgba(255,255,255,0.7147233893557423) 100%);
 }
 
 .login-card-reg {

@@ -75,15 +75,21 @@ svg.header-icons {
 }
 
 .top-nav {
-    color: #6A1B9A;
-    font-weight: 600;
-    font-size:16px;
+    color: #6A1B9A !important;
+    font-weight: 500;
+    font-size: 16px;
 }
+
+.top-nav:hover {
+    color: #FF6F00 !important;
+
+}
+
 
 button.nav-link.top-nav {
     color: #6A1B9A;
     font-weight: 600;
-    font-size:16px;
+    font-size: 16px;
     border: none;
     background: transparent;
 }
@@ -93,8 +99,7 @@ button.nav-link.top-nav {
 }
 
 .nav-padding-top {
-    padding-top: 55px;
-    padding-left: 15px;
+    padding-top: 20px;
 }
 
 section.signup {
@@ -184,7 +189,6 @@ figure.order-status {
 
 .brand-wrap .logo,
 .navbar-brand .logo {
-    margin-left: 15px;
     max-height: 90px;
     display: inline-block;
 }
@@ -235,7 +239,7 @@ div.card.login-card {
 }
 
 .shadow {
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.8)!important;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .8) !important;
     border-radius: 20px;
     background-color: white;
 }
@@ -250,12 +254,12 @@ div.card.login-card {
     color: #6A1B9A;
     font-weight: 500;
     border-radius: 1rem !important;
-    box-shadow: 0 .1rem 0.2rem rgba(0,0,0,.2)!important;
+    box-shadow: 0 .1rem 0.2rem rgba(0, 0, 0, .2) !important;
 }
 
 
 .mykasi-group-item.active {
-z-index: 2;
+    z-index: 2;
     color: #fff;
     background-color: #FF8800;
     border-color: #ffe0b2;
@@ -278,7 +282,7 @@ input[type=submit] {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 input[type=submit]:hover {
@@ -308,7 +312,7 @@ button.btn.btn-primary-login {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 button.btn.btn-primary-login:hover {
@@ -330,7 +334,7 @@ button.btn.btn-primary-cart {
     background-color: #FF8800;
     border: none;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 button.btn.btn-primary-cart:hover {
@@ -354,7 +358,7 @@ a.btn.btn-primary-cont {
     background-color: #6A1B9A;
     border: none;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 a.btn.btn-primary-cont:hover {
@@ -377,7 +381,7 @@ a.btn.btn-primary-checkout {
     background-color: #00C851;
     border: none;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 a.btn.btn-primary-checkout:hover {
@@ -401,7 +405,7 @@ input.next.btn.btn-primary-next {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 
@@ -423,7 +427,7 @@ input.previous.btn.btn-primary-previous {
     padding: .5rem 1.25rem;
     border-radius: .25rem;
     margin: 10px 0px;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 
@@ -444,7 +448,7 @@ a.btn.btn-primary-logout {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 
@@ -480,7 +484,7 @@ a.btn.btn-primary-logout {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 a.btn.btn-primary-logout:hover {
@@ -507,7 +511,7 @@ input.btn.btn-primary-logout {
     border: none;
     padding: .75rem 1.25rem;
     border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 input.btn.btn-primary-logout:hover {
@@ -610,5 +614,12 @@ svg.account-edit-user {
 }
 
 svg.account-trash {
-    color:#FF3500;
+    color: #FF3500;
+}
+
+@media (max-width: 320.98px) {
+    .nav-padding-top {
+        padding-top: 18px;
+    }
+
 }
