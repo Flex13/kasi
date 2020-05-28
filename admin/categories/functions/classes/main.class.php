@@ -1,8 +1,8 @@
 <?php
 
-if ((isset($_SESSION['a_id']) || isset($_GET['amakasi']))) {
+if ((isset($_SESSION['a_id']) || isset($_GET['categories']))) {
 
-    $sqlQuery = "SELECT * FROM kasi";
+    $sqlQuery = "SELECT * FROM category";
     $statement = $db->prepare($sqlQuery);
     $statement->execute();
 

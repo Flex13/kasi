@@ -32,6 +32,15 @@
         </a>
       </li>
 
+      <li class="nav-item <?php if ($page_title == 'Categories - Kasi Mall Online') {
+                              echo "active";
+                            } ?>">
+        <a class="nav-link" href="categories.php?categories">
+          <i class="material-icons">format_list_bulleted</i>
+          <p>Categories</p>
+        </a>
+      </li>
+
       <li class="nav-item <?php if ($page_title == 'Customer - Kasi Mall Online') {
                               echo "active";
                             } ?>">

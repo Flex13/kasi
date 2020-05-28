@@ -41,8 +41,11 @@ if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activat
             $statement->execute(array(':activated' => "1", ':m_id' => $shop_id));
     
             if ($statement->rowCount() == 1) {
-                
-                header("Location: supplier.php?view={$shop_id}");
+                echo " 
+            <script>
+            window.location.replace('supplier.php?view={$shop_id}');
+            </script>
+            ";
             }
 
 
@@ -60,7 +63,11 @@ if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activat
             $statement->execute(array(':activated' => "0", ':m_id' => $shop_id));
     
             if ($statement->rowCount() == 1) {
-                header("Location: supplier.php?view={$shop_id}");
+                echo " 
+            <script>
+            window.location.replace('supplier.php?view={$shop_id}');
+            </script>
+            ";
             }
 
 
