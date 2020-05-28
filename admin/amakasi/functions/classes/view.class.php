@@ -1,67 +1,72 @@
 <?php
 
+
 if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activate']) && !isset($_POST['deactivate'])) {
 
     if (isset($_GET['view'])) {
-        $user_id = $_GET['view'];
+        $kasi_id = $_GET['view'];
     }
 
-    $sqlQuery = "SELECT * FROM customers WHERE id = :id ";
+    $sqlQuery = "SELECT * FROM kasi WHERE location_id = :id ";
     $statement = $db->prepare($sqlQuery);
-    $statement->execute(array(':id' => $user_id));
+    $statement->execute(array(':id' => $kasi_id));
 
 
     while ($rs = $statement->fetch()) {
-        $id = $rs['id'];
-                                $username = $rs['c_username'];
-                                $email = $rs['c_email'];
-                                $name = $rs['c_firstname'];
-                                $surname  = $rs['c_surname'];
-                                $contact  = $rs['c_contact'];
-                                $gender  = $rs['c_gender'];
-                                $country  = $rs['c_country'];
-                                $province  = $rs['c_province'];
-                                $city  = $rs['c_city'];
-                                $kasi  = $rs['c_kasi'];
-                                $street_address  = $rs['c_street_address'];
-                                $zip  = $rs['c_zip'];
-                                $image  = $rs['c_image'];
-                                $activated = $rs['activated'];
-                                $reg_date = $rs['c_reg_date'];
+        $id = $rs['location_id'];
+        $name = $rs['name'];
+        $alt_name = $rs['alt_name'];
+        $province  = $rs['province'];
+        $city  = $rs['city'];
+        $image  = $rs['image1'];
+        $activated = $rs['activated'];
+        $reg_date = $rs['reg_date'];
     }
 } else if (isset($_POST['activate'])) {
 
-        $user_id = $_GET['view'];
+    $kasi_id = $_GET['view'];
 
-        
-
-            $sql = "UPDATE customers SET activated=:activated WHERE id=:id AND activated='0'";
-
-            $statement = $db->prepare($sql);
-            $statement->execute(array(':activated' => "1", ':id' => $user_id));
     
-            if ($statement->rowCount() == 1) {
-                
-                header("Location: customer.php?view={$user_id}");
-            }
 
+        $sql = "UPDATE kasi SET activated=:activated WHERE location_id=:id AND activated='0'";
 
+        $statement = $db->prepare($sql);
+        $statement->execute(array(':activated' => "1", ':id' => $kasi_id));
         
+        if ($statement->rowCount() == 1) {
+            echo " 
+            <script>
+            window.location.replace('amakasi.php?view={$kasi_id}');
+            </script>
+            ";
+        }
 
-    } else if (isset($_POST['deactivate'])) {
 
-        $user_id = $_GET['view'];
-
-
-            $sql = "UPDATE customers SET activated=:activated WHERE id=:id AND activated='1'";
-
-            $statement = $db->prepare($sql);
-            $statement->execute(array(':activated' => "0", ':id' => $user_id));
     
-            if ($statement->rowCount() == 1) {
-                header("Location: customer.php?view={$user_id}");
-            }
+
+} else if (isset($_POST['deactivate'])) {
+
+    $kasi_id = $_GET['view'];
+
+    try {
+
+        $sql = "UPDATE kasi SET activated=:activated WHERE location_id=:id AND activated='1'";
+
+        $statement = $db->prepare($sql);
+        $statement->execute(array(':activated' => "0", ':id' => $kasi_id));
+       
+        if ($statement->rowCount() == 1) {
+            echo " 
+            <script>
+            window.location.replace('amakasi.php?view={$kasi_id}');
+            </script>
+            ";
+        }
 
 
+    } catch (PDOException $ex) {
+        $result = flashMessage("An Error Occorrd" . $ex->getMessage());
     }
+
+}
 

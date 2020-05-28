@@ -41,8 +41,11 @@ if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activat
             $statement->execute(array(':activated' => "1", ':id' => $user_id));
     
             if ($statement->rowCount() == 1) {
-                
-                header("Location: customer.php?view={$user_id}");
+                echo " 
+            <script>
+            window.location.replace('customer.php?view={$user_id}');
+            </script>
+            ";
             }
 
 
@@ -59,7 +62,11 @@ if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activat
             $statement->execute(array(':activated' => "0", ':id' => $user_id));
     
             if ($statement->rowCount() == 1) {
-                header("Location: customer.php?view={$user_id}");
+                echo " 
+                <script>
+                window.location.replace('customer.php?view={$user_id}');
+                </script>
+                ";
             }
 
 

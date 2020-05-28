@@ -11,14 +11,14 @@ include('functions/classes/loginadmin.class.php');
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="images/kasilogo.jpg" alt="login" class="login-card-img">
+            <img src="images/kasi-logo-big.jpg" alt="login" class="login-card-img img-fluid">
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
-                <img src="assets/images/logo.svg" alt="logo" class="logo">
+                
               </div>
-              <p class="login-card-description">Sign into your shop account</p>
+              <p class="login-card-description">Admin</p>
 
 
               <form class="" action="" method="post">
