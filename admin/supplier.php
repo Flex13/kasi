@@ -64,6 +64,16 @@ include('includes/header.php');
                         include("suppliers/add_product.php");
                     }
                     ?>
+                    <?php
+                    if (isset($_GET['single'])) {
+                        include("suppliers/single_product.php");
+                    }
+                    ?>
+                    <?php
+                    if (isset($_GET['edit_product'])) {
+                        include("suppliers/edit_product.php");
+                    }
+                    ?>
                 </div>
             </div>
 

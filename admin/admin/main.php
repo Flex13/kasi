@@ -11,7 +11,7 @@ include('functions/classes/main.class.php');
                 <h4 class="card-title ">Kasi Mall Admin</h4>
                 <p class="card-category"> List of all Admins on Kasi Mall</p>
                 <a class="btn btn-primary btn-round" href="admin.php?add">
-                    <i class="material-icons">person</i> Add Admin
+                     Add Admin
                 </a>
             </div>
             <div class="card-body">
@@ -45,9 +45,12 @@ include('functions/classes/main.class.php');
                     $id = $rs['id'];
                     $name = $rs['name'];
                     $surname = $rs['surname'];
-                    $email = $rs['email'];
-                    $username  = $rs['username'];
+                    $email  = $rs['email'];
+                    $username = $rs['username'];
                     $cell = $rs['cell'];
+                    $reg_date = $rs['reg_date'];
+                    $activated = $rs['activated'];
+                    $user_type = $rs['user_type'];
                 ?>
                             <tr>
                                 <td>
@@ -63,14 +66,20 @@ include('functions/classes/main.class.php');
                                 <?php if (isset($surname)) echo $surname; ?>
                                 
                                 <td class="td-actions">
-                                <a class="btn btn-success btn-round btn-block" href="admin.php?edit=<?php if (isset($id)) echo $id; ?>">
-                                <i class="material-icons">edit</i> Edit
+                                <a class="btn btn-info btn-round btn-block" href="admin.php?edit=<?php if (isset($id)) echo $id; ?>">
+                                 Edit
                 </a>
                                 </td>
                                 <td class="td-actions">
-                                <a class="btn btn-danger btn-round btn-block" href="admin.php?delete=<?php if (isset($id)) echo $id; ?>">
-                                <i class="material-icons">close</i> Remove
-                </a>
+                                <form id="regiration_form" novalidate action="" method="post">
+                            <input type="hidden" name="hidden_id" value="<?php if (isset($id)) echo $id; ?>"/>
+                                <?php
+                                if ($activated == '1') : ?>
+                                    <button type="submit" name="deactivate" class="btn btn-danger btn-round btn-block"><i class="material-icons">public</i> Deactivate</button>
+                                <?php else : ?>
+                                    <button type="submit" name="activate" class="btn btn-success btn-round btn-block"><i class="material-icons">public</i> Activate</button>
+                                <?php endif ?>
+                                </form>
                                 </td>
                             </tr>
                 <?php } ?>

@@ -73,7 +73,7 @@ include('functions/classes/edit.class.php');
             <div class="row">
               <div class="col-md-12">
               <div class="form-group bmd-form-group">
-              <label class="btn btn-primary btn-round">Profile Picture:
+              <label class="btn btn-info btn-round">Profile Picture:
               <input class="file" type="file" name="image" id="imageSelect";>
               </label><br>
                         

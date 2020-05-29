@@ -207,13 +207,11 @@ function validate_token($request_token)
     return false;
 }
 
-
 // Error Messages 
-function errorMessage()
-{
+function errorMessage() {
 
-    if (isset($_SESSION["errorMessage"])) {
-        $output = "<div class='alert alert-danger text-center'>";
+    if(isset($_SESSION["errorMessage"])) {
+        $output = "<div class='alert  m-3 error text-center'>";
         $output .= htmlentities($_SESSION['errorMessage']);
         $output .= "</div>";
         $_SESSION["errorMessage"] = null;
@@ -223,11 +221,10 @@ function errorMessage()
 
 //Success Messages
 
-function successMessage()
-{
+function successMessage() {
 
-    if (isset($_SESSION["successMessage"])) {
-        $output = "<div class='alert alert-success text-center'>";
+    if(isset($_SESSION["successMessage"])) {
+        $output = "<div class='alert m-3 success text-center'>";
         $output .= htmlentities($_SESSION['successMessage']);
         $output .= "</div>";
         $_SESSION["successMessage"] = null;
@@ -236,3 +233,10 @@ function successMessage()
 }
 
 
+function test_input($data)
+    {
+         $data = trim($data);
+         $data = stripslashes($data);
+         $data = htmlspecialchars($data);
+         return $data;
+    }

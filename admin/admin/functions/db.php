@@ -1,8 +1,8 @@
 <?php
 //initialize variables to hold connection parameters
-$DBusername = 'root';
-$dsn = 'mysql:host=localhost; dbname=kasimall';
-$DBpassword = '';
+$DBusername = 'btsappco_btsappco';
+$dsn = 'mysql:host=localhost; dbname=btsappco_kasimall';
+$DBpassword = '04011994Flex15$';
 
 try{
     //create an instance of the PDO class with the required parameters

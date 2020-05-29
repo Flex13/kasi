@@ -20,6 +20,7 @@ if ((isset($_SESSION['a_id']) || isset($_GET['view'])) && !isset($_POST['activat
         $shop_kasi = $rs['shop_kasi'];
         $shop_address = $rs['shop_address'];
         $shop_zip = $rs['shop_zip'];
+        $image = $rs['m_image'];
 
         $shop_name = $rs['m_shop_name'];
         $shop_description = $rs['m_description'];

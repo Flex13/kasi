@@ -9,6 +9,8 @@ include('functions/classes/registerSupplier.class.php');
     <div class="mb-4 login-card mx-auto" style="max-width:550px;">
       <?php if (isset($result)) echo $result; ?>
       <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
+      <?php echo errorMessage(); ?>
+                <?php echo successMessage(); ?>
     </div>
     <div class="card login-card mx-auto" style="max-width:650px;">
       <div class="card-header card-header-primary">
@@ -18,7 +20,7 @@ include('functions/classes/registerSupplier.class.php');
       <div class="card-body">
         <div class="col-md-12">
 
-          <form id="regiration_form" novalidate action="" method="post">
+        <form id="regiration_form" novalidate action="" method="post"  enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
@@ -42,13 +44,13 @@ include('functions/classes/registerSupplier.class.php');
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="password" placeholder="Password" name="Password" size="20" maxlength="20" id="psswd" class="input-psswd form-control" autocomplete="on" psswd-shown="false" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
+                  <input type="password" placeholder="Password" value="<?php if (isset($password)) echo $password; ?>" name="Password" size="20" maxlength="20" id="psswd" class="input-psswd form-control" autocomplete="on" psswd-shown="false" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
 
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group bmd-form-group">
-                  <input type="password" placeholder="Confirm Password" name="Password2" size="20" maxlength="20" id="psswd" class="input-psswd form-control" autocomplete="on" psswd-shown="false" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
+                  <input type="password" placeholder="Confirm Password" value="<?php if (isset($cpassword)) echo $cpassword; ?>" name="Password2" size="20" maxlength="20" id="psswd" class="input-psswd form-control" autocomplete="on" psswd-shown="false" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." />
                 </div>
               </div>
             </div>
@@ -191,7 +193,7 @@ include('functions/classes/registerSupplier.class.php');
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group bmd-form-group">
-                <input type="text" name="Shop_Address" size="32" value="<?php if (isset($shop_address)) echo $street_address; ?>" maxlength="60" class="form-control" placeholder="Business address">
+                <input type="text" name="Shop_Address" size="32" value="<?php if (isset($shop_address)) echo $shop_address; ?>" maxlength="60" class="form-control" placeholder="Business address">
                 </div>
               </div>
             </div>
@@ -242,6 +244,17 @@ include('functions/classes/registerSupplier.class.php');
                 <input type="text" name="Shop_Zip" size="10" value="<?php if (isset($shop_zip)) echo $shop_zip; ?>" maxlength="10" class="form-control" placeholder="Zip code">
                 </div>
               </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+              <div class="form-group bmd-form-group">
+              <label class="btn btn-info btn-round">Profile Picture:
+              <input class="file" type="file" name="image" id="imageSelect" value="<?php echo $image; ?>";>
+              </label><br>
+                        
+              </div>
+            </div>
             </div>
 
 

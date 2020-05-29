@@ -9,8 +9,9 @@ include('functions/classes/main.class.php');
             <div class="card-header card-header-primary">
                 <h4 class="card-title ">Categories</h4>
                 <p class="card-category"> List of all Categories</p>
-                <a class="btn btn-primary btn-round" href="categories.php?add"><i class="material-icons">format_list_bulleted</i> Add Category</a>
+                <a class="btn btn-primary btn-round" href="categories.php?add"> Add Category</a>
             </div>
+            
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table">
@@ -62,17 +63,15 @@ include('functions/classes/main.class.php');
                                     <?php if (isset($added_by)) echo $added_by; ?>
                                     </td>
                                     <td class="text-primary">
-                                    <?php 
-                                    if ($activated == '1') {
-                                        echo "Active";
-                                        }  else {
-                                            echo "not-active";
-                                            }; 
-                                            ?>
+                                    <?php if ($activated == '1') :?>
+                                        <i class='text-success material-icons'>public</i></div>
+                                        <?php else : ?>
+                                            <i class='text-danger material-icons'>public_off</i></div>
+                                    <?php endif ?>
                                     </td>
                                     <td class="td-actions">
                                         <a class="btn btn-success btn-round btn-block" href="categories.php?view=<?php if (isset($id)) echo $id; ?>">
-                                            <i class="material-icons">visibility</i> View
+                                             View
                                         </a>
                                 </tr>
                             <?php } ?>

@@ -32,22 +32,13 @@ include('functions/classes/edit.class.php');
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group bmd-form-group">
-                  <input type="text" class="form-control" id="alt_name" value="<?php if (isset($sub_name)) echo $sub_name; ?>" name="Sub" placeholder="Sub Category Name">
+                  <input type="text" class="form-control" id="alt_name" value="<?php if (isset($sub)) echo $sub; ?>" name="Sub" placeholder="Sub Category Name">
                 </div>
               </div>
             </div>
 
 
 
-            <div class="row">
-              <div class="col-md-12">
-              <div class="form-group bmd-form-group">
-              <label class="btn btn-primary btn-round">Profile Picture:
-              <input class="file" type="file" name="image" id="imageSelect">
-              </label><br>
-              </div>
-            </div>
-            </div>
 
 
             <button type="submit" name="editcategory" class="btn btn-primary pull-right">edit Category</button>

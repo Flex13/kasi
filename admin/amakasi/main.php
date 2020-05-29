@@ -63,17 +63,15 @@ include('functions/classes/main.class.php');
                                     <?php if (isset($city)) echo $city; ?>
                                     </td>
                                     <td class="text-primary">
-                                    <?php 
-                                    if ($activated == '1') {
-                                        echo "Active";
-                                        }  else {
-                                            echo "not-active";
-                                            }; 
-                                            ?>
+                                    <?php if ($activated == '1') :?>
+                                        <i class='text-success material-icons'>public</i></div>
+                                        <?php else : ?>
+                                            <i class='text-danger material-icons'>public_off</i></div>
+                                    <?php endif ?>
                                     </td>
                                     <td class="td-actions">
                                         <a class="btn btn-success btn-round btn-block" href="amakasi.php?view=<?php if (isset($id)) echo $id; ?>">
-                                            <i class="material-icons">visibility</i> View
+                                             View
                                         </a>
                                 </tr>
                             <?php } ?>
