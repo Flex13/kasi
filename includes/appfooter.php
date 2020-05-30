@@ -5,7 +5,7 @@
 
 <!-- jQuery -->
 <script src="assets/js/jquery.js" type="text/javascript"></script>
-
+<script src="assets/js/product_likes.js" type="text/javascript"></script>>
 <script defer src="assets/js/all.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 

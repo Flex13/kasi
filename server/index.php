@@ -8,7 +8,7 @@ include('includes/appheader.php');
     <section class="container-fluid section-content"  style="margin-bottom: 100px">
         <div class="container-fluid p-0">
             <?php include('includes/includes_main.php'); ?>
-            <?php include('functions/classes/product_likes.class.php'); ?>
+            <?php include('includes/login_mode.php'); ?>
 
             
 
@@ -18,27 +18,110 @@ include('includes/appheader.php');
                 <h3 class="section-title text-center">Top Picks Of The Day</h3>
             </div>
 
-            <?php if (isset($result)) echo $result; ?>
-    <?php if (!empty($form_errors)) echo show_errors($form_errors); ?>
-
             <!--Second Slider-->
             <div class="container-fluid p-0">
-            <div class="site-slider-three">
-                    <div class="row slider-three text-center">
+                <div class="site-slider-two px md-4">
+                    <div class="row slider-two text-center">
+
+                        <div class="col-md-4 kasi">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="images/food.jpg" class="img-fluid" alt="product1">
+                                    <span class="topbar">
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
+                                    </span>
+                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <a href="#" class="title">Braai Pack</a>
+                                    <a href="#" class="shop-name">Muncheez</a><br>
+                                    <a href="#" class="kasi-name">Soweto</a>
+                                    <div class="price mt-2">R80.00</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </figure> <!-- card // -->
+                        </div>
 
 
+                        <div class="col-md-4 kasi">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="images/fashion.jpg" class="img-fluid" alt="product1">
+                                    <span class="topbar">
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
+                                    </span>
+                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <a href="#" class="title">New Fashion trend</a>
+                                    <a href="#" class="shop-name">PSA</a><br>
+                                    <a href="#" class="kasi-name">Vaal</a>
+                                    <div class="price mt-2">R150.00</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </figure> <!-- card // -->
+                        </div>
+
+                        <div class="col-md-4 kasi">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="images/products1.jpeg" class="img-fluid" alt="product1">
+                                    <span class="topbar">
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
+                                    </span>
+                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <a href="#" class="title">Donuts</a>
+                                    <a href="#" class="shop-name">Muncheez</a><br>
+                                    <a href="#" class="kasi-name">Soweto</a>
+                                    <div class="price mt-2">R35.00</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </figure> <!-- card // -->
+                        </div>
+
+                        <div class="col-md-2 kasi">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="images/Spinza.jpg" class="img-fluid" alt="product1">
+                                    <span class="topbar">
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
+                                    </span>
+                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <a href="#" class="title">Artchar</a>
+                                    <a href="#" class="shop-name">Muncheez</a><br>
+                                    <a href="#" class="kasi-name">Soweto</a>
+                                    <div class="price mt-2">R35.00</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </figure> <!-- card // -->
+                        </div>
+
+                        <div class="col-md-4 kasi">
+                            <figure class="card card-product-grid">
+                                <div class="img-wrap">
+                                    <img src="images/spinza2.jpg" class="img-fluid" alt="product1">
+                                    <span class="topbar">
+                                        <a href="#" class="float-right"><i onclick="myFunction(this)" class="far fa-heart product-heart"></i></a>
+                                    </span>
+                                    <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
+                                </div>
+                                <figcaption class="info-wrap border-top">
+                                    <a href="#" class="title">Drinks</a>
+                                    <a href="#" class="shop-name">Muncheez</a><br>
+                                    <a href="#" class="kasi-name">Soweto</a>
+                                    <div class="price mt-2">R50.00</div> <!-- price-wrap.// -->
+                                </figcaption>
+                            </figure> <!-- card // -->
+                        </div>
 
 
-<?php include('admin/slides/products/top_pics.php'); ?>
+                    </div>
 
-
-                </div>
-                <div class="slider-btn">
+                    <div class="slider-btn">
                         <span class="prev position-top"><i class="fas fa-chevron-left fa-2x text-secondary"></i></span>
                         <span class="next position-top right-0"><i class="fas fa-chevron-right fa-2x text-secondary"></i></span>
                     </div>
-
-</div>
+                </div>
             </div>
             <!--Second Slider End-->
 

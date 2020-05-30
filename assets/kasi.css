@@ -571,8 +571,15 @@ a.shop-button {
 
 .product-heart {
     color: red;
-    font-size: 23px;
+    font-size: 18px;
+    background: transparent;
 }
+
+button.like {
+    background-color: transparent;
+    border: none !important;
+}
+
 
 .btn-product {
     color: #FF6F00 !important;
