@@ -69,6 +69,14 @@ include('functions/classes/view.class.php');
                             <a class="btn btn-primary btn-round btn-block" href="amakasi.php?edit=<?php if (isset($kasi_id)) echo $kasi_id; ?>"> Edit Profile</a>
                         </div>
 
+                        <div class="col-md-12">
+                            <a class="btn btn-info btn-round btn-block" href="amakasi.php?add_shops=<?php if (isset($kasi_id)) echo $kasi_id; ?>"> Add shop Pictures</a>
+                        </div>
+
+                        <div class="col-md-12">
+                            <a class="btn btn-warning btn-round btn-block" href="amakasi.php?view_shops=<?php if (isset($kasi_id)) echo $kasi_id; ?>"> View Shop Pictures</a>
+                        </div>
+
 
 
                         <div class="col-md-12">

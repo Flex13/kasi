@@ -51,15 +51,48 @@ include('includes/appheader.php');
                 <div class="site-slider">
                     <div class="row slider-one">
 
-                        <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/alex-showcase.jpg'); ">
+                    <?php
+ //fetching all the categories from Database
+ global $db;
+ $sqlQuery1 = "SELECT * FROM kasi WHERE activated= :value";
+ $stmt = $db->prepare($sqlQuery1);
+ $stmt->execute(array(':value' => '1'));
+
+ while ($rs = $stmt->fetch()) { 
+    $locaition_id = $rs['location_id'];
+    $kasi_province = $rs['province'];
+    $kasi_name = $rs['name'];
+    $image = $rs['image1'];
+    $city = $rs['city'];
+    $activated = $rs['activated'];
+    $alt_name= $rs['alt_name'];
+                    ?>
+
+
+                        <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('admin/uploads/amakasi/<?php if (isset($image)) echo $image; ?>'); ">
+
+                        
+                        <?php
+ //fetching all the categories from Database
+ global $db;
+ $sqlQuery1 = "SELECT * FROM merchant WHERE activated= :value AND shop_kasi = :kasi";
+ $stmt = $db->prepare($sqlQuery1);
+ $stmt->execute(array(':value' => '1', ':kasi' => $kasi_name));
+
+ while ($rs = $stmt->fetch()) { 
+    $shop_image= $rs['m_image'];
+                    ?>
+
+
                             <div class="container amakasi-padding">
-                                <h3 class="section-title ">Alex/Gomora</h3>
+                                <h3 class="section-title "><?php if (isset($kasi_name)) echo $kasi_name; ?> /  <?php if (isset($alt_name)) echo $alt_name; ?></h3>
+
                                 <div class="row shop-images d-none d-md-flex">
                                     <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                        <img src="admin/uploads/suppliers/<?php if (isset($shop_image)) echo $shop_image; ?>" alt="shop1" class="img-fluid">
                                     </div>
                                     <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
+                                        <img src="admin/uploads/suppliers/<?php if (isset($shop_image)) echo $shop_image; ?>" alt="shop1" class="img-fluid">
                                     </div>
                                     <div class="col ">
                                         <img src="images/food.jpg" alt="shop1" class="img-fluid">
@@ -97,9 +130,13 @@ include('includes/appheader.php');
                                     </div>
                                 </div>
                             </div>
+
+ <?php } ?>
+
+
                             <div class="container">
                                 <div class="row showcase-button">
-                                    <a href="shops.php" class="btn btn-primary-cart ">
+                                    <a href="shops.php?shops=<?php if (isset($kasi_name)) echo $kasi_name; ?>" class="btn btn-primary-cart ">
                                         <!-- btn btn-default Begin -->
                                         View all stores <i class="fa fa-chevron-right"></i>
                                     </a>
@@ -111,125 +148,7 @@ include('includes/appheader.php');
 
                         </div>
 
-                        <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/soweto3.jpg'); ">
-                            <div class="container amakasi-padding">
-                                <h3 class="section-title">Soweto</h3>
-                                <div class="row shop-images d-none d-md-flex">
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="container amakasi-padding">
-                                <div class="row shop2-images">
-                                    <div class="col-6 d-none d-md-block">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-6">
-                                        <div class="row ">
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                        </div>
-
-                                        <div class="row shop2-bottom-row">
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="row showcase-button">
-                                    <a href="shops.php" class="btn btn-primary-cart ">
-                                        <!-- btn btn-default Begin -->
-                                        View all stores <i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-                            
-                        </div>
-
-                        <div class="showcase" style="background-image: linear-gradient(rgba(248,249,250,0.1), rgba(248,249,250,0.1)), url('images/vaal3.jpg'); ">
-                            <div class="container amakasi-padding">
-                                <h3 class="section-title">Vaal</h3>
-                                <div class="row shop-images d-none d-md-flex">
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                    <div class="col ">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="container amakasi-padding">
-                                <div class="row shop2-images">
-                                    <div class="col-6 d-none d-md-block">
-                                        <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                    </div>
-
-                                    <div class="col-sm-12 col-md-6 col-lg-6">
-                                        <div class="row ">
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                        </div>
-
-                                        <div class="row shop2-bottom-row">
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                            <div class="col">
-                                                <img src="images/food.jpg" alt="shop1" class="img-fluid">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="container">
-                                <div class="row showcase-button">
-                                    <a href="shops.php" class="btn btn-primary-cart ">
-                                        <!-- btn btn-default Begin -->
-                                        View all stores <i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-                            
-                        </div>
+                    <?php  } ?>    
 
                     </div>
                     <div class="slider-btn">
@@ -252,110 +171,9 @@ include('includes/appheader.php');
                 <div class="site-slider-three">
                     <div class="row slider-three text-center">
 
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/food.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0"> Food</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
 
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/spinza2.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0">Drinks</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/fashion.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0">Clothing</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/food.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0"> Food</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/spinza2.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0">Drinks</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="card login-card">
-                                <div class="card-body">
-                                    <div class="card-banner">
-                                        <div class="card-body" style="height:250px; background-image: url('images/fashion.jpg');">
-                                        </div>
-                                        <div class="text-bottom cat-banner">
-                                            <a style="color: white;" href="">
-                                                <h4 class="title mb-0">Clothing</h4>
-                                            </a>
-                                            <a href="shops.php" class="btn btn-primary-cat">Shop Now <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <?php include('admin/slides/categories/index_categories.php'); ?>
 
 
 

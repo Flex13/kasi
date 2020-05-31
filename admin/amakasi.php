@@ -48,6 +48,12 @@ include('includes/header.php');
                             include("amakasi/edit.php");
                         }
                         ?>
+
+                        <?php
+                        if (isset($_GET['add_shops'])) {
+                            include("amakasi/add_shop_images.php");
+                        }
+                        ?>
                     </div>
                 </div>
 
